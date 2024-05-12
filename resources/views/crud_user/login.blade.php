@@ -12,7 +12,7 @@
             <div class="card">
                 <h2 class="card-header text-center">Đăng nhập</h2>
                 <div class="card-body">
-                    <form action="{{ route('user.authUser') }}" method="post">
+                    <form action="{{ route('login') }}" method="post">
                         @csrf
                         <div class="form-group">
                             <label for="email">Email:</label>
