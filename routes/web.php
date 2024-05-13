@@ -25,3 +25,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/admin/dashboard', [AdminController::class, 'dashboardAdmin']);
+Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');

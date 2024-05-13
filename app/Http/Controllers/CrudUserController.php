@@ -96,4 +96,15 @@ class CrudUserController extends Controller
 
         return redirect("login")->withSuccess('Login details are not valid');
     }
+
+        /**
+     * Delete user by id
+     */
+    public function deleteUser(Request $request)
+    {
+        $user_id = $request->get('id');
+        $user = User::destroy($user_id);
+
+        return redirect("list_user")->withSuccess('You have signed-in');
+    }
 }
