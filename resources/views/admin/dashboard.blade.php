@@ -72,13 +72,7 @@
             </nav>
 
             <!-- Phần nội dung chính ở đây -->
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <div class="container mt-4">
-                    <h1 class="mb-4">Chào mừng bạn đến với trang dashboard!</h1>
-                    <p>Ở đây, bạn có thể thực hiện các hoạt động quản lý và theo dõi tình hình của hệ thống.</p>
-                </div>
-            </main>
-        </div>
+            @yield('content')
     </div>
 
     <!-- Footer -->
