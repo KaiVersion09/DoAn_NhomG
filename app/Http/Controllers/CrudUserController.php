@@ -57,4 +57,29 @@ class CrudUserController extends Controller
 
         return redirect("login");
     }
+
+    public function home()
+    {
+        return view('crud_user.home');
+    }
+
+    /**
+     * User submit form login
+     */
+    public function authUser(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('home')
+                ->withSuccess('Signed in');
+        }
+
+        return redirect("login")->withSuccess('Login details are not valid');
+    }
 }
