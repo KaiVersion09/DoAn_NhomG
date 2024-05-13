@@ -59,6 +59,9 @@
                             <a class="nav-link" href="#"><i class="fas fa-hamburger"></i> Quản lý món ăn</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-chart-bar"></i> Quản lý danh mục</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
                         </li>
                         <li class="nav-item">
