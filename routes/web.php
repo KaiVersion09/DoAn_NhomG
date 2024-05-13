@@ -34,4 +34,5 @@ Route::get('staff/list', [CrudStaffController::class, 'listStaff'])->name('staff
 Route::get('staff/add', [CrudStaffController::class, 'addStaff'])->name('staff.add');
 Route::post('staff/add', [CrudStaffController::class, 'postStaff'])->name('staff.post');
 Route::get('staff/delete', [CrudStaffController::class, 'deleteStaff'])->name('staff.delete');
-Route::get('staff/update', [CrudStaffController::class, 'updateStaff'])->name('staff.update');
+Route::get('staff/update', [CrudStaffController::class, 'updateStaff'])->name('staff.updateStaff');
+Route::post('staff/update', [CrudStaffController::class, 'postUpdateStaff'])->name('staff.postUpdateStaff');

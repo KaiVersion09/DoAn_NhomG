@@ -30,7 +30,7 @@
                             <td>{{ $staff->phone }}</td>
                             <td>{{ $staff->wage }}</td>
                             <td class="text-center" style="padding-top: 10px;">
-                                <a href="" class="btn btn-primary">Edit</a>
+                                <a href="{{ route('staff.updateStaff', ['id' => $staff->id]) }}" class="btn btn-primary">Edit</a>
                                 <a href="{{ route('staff.delete', ['id' => $staff->id]) }}" class="btn btn-danger ml-2">Delete</a>
                             </td>
                         </tr>

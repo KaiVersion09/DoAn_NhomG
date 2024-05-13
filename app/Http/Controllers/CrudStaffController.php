@@ -77,4 +77,61 @@ class CrudStaffController extends Controller
         // Trả về view với danh sách nhân viên đã cập nhật
         return view('crud_staff.list_staff', ['staffs' => $staffs]);
     }
+
+    public function updateStaff(Request $request)
+    {
+        $staff_id = $request->get('id');
+        $staff = Staff::find($staff_id);
+        return view('crud_staff.update_staff', ['staff' => $staff]);
+    }
+
+    /**
+     * Submit form update user
+     */
+    public function postUpdateStaff(Request $request)
+    {
+        $input = $request->all();
+
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:staff,email,' . $input['id'],
+            'password' => 'nullable|min:6', // Bạn có thể cho phép mật khẩu là null nếu không muốn bắt buộc cập nhật
+            'password_confirmation' => 'required_with:password|same:password',
+            'phone' => 'required|regex:/^0[0-9]{9}$/',
+            'wage' => 'required|min:6',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'phone.required' => 'Số điện thoại là bắt buộc.',
+            'phone.regex' => 'Số điện thoại không hợp lệ.',
+            'avatar.image' => 'File tải lên phải là ảnh.',
+            'avatar.mimes' => 'Ảnh tải lên phải có định dạng jpeg, png, jpg hoặc gif.',
+            'avatar.max' => 'Kích thước của ảnh không được vượt quá 2MB.',
+        ]);
+        //cap nhap thong tin nguoi dung dua tren csdl
+        $staff = Staff::find($input['id']);
+        $staff->name = $input['name'];
+        $staff->email = $input['email'];
+        $staff->phone = $input['phone'];
+        $staff->wage = $input['wage'];
+        if (!empty($input['password'])) {
+            $staff->password = Hash::make($input['password']);
+        }
+
+        // Xử lý cập nhật avatar nếu có
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
+            $avatar->move(public_path('avatars'), $avatarName);
+            $avatarPath = 'avatars/' . $avatarName;
+            $staff->avatar = $avatarPath; // Cập nhật đường dẫn avatar mới
+        }
+
+        $staff->save();
+
+        // Lấy lại danh sách nhân viên sau khi update
+        $staffs = Staff::paginate(4);
+
+        // Trả về view với danh sách nhân viên đã cập nhật
+        return view('crud_staff.list_staff', ['staffs' => $staffs]);
+    }
 }
