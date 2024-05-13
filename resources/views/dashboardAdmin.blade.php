@@ -56,7 +56,7 @@
                             <a class="nav-link" href="#"><i class="fas fa-utensils"></i> Quản lý bàn ăn</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-hamburger"></i> Quản lý món ăn</a>
+                            <a class="nav-link" href="{{ route('food.list') }}"><i class="fas fa-hamburger"></i> Quản lý món ăn</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-store"></i> Quản lý chi nhánh</a>

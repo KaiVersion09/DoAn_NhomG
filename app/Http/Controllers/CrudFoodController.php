@@ -131,5 +131,13 @@ class CrudFoodController extends Controller
     return redirect("list_food")->withSuccess('Thông tin món ăn đã được cập nhật thành công.');
 }
 
+public function deleteFood(Request $request)
+{
+    $food_id = $request->get('food_id');
+    $food = Food::destroy($food_id);
+
+    return redirect("list_food")->withSuccess('You have signed-in');
+}
+
 
 }

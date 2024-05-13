@@ -32,9 +32,9 @@
                             <td>{{ $food->food_description }}</td>
                             <td class="text-center" style="padding-top: 10px;">
                                 <a href="{{ route('food.updateFood', ['food_id' => $food->food_id]) }}" class="btn btn-primary">Edit</a>
-                                <a href="#" class="btn btn-danger ml-2">Delete</a>
+                                <a href="{{ route('food.deleteFood', ['food_id' => $food->food_id]) }}" class="btn btn-danger ml-2">Delete</a>
                             </td>
-
+                            
                         </tr>
                         @endforeach
                     </tbody>
