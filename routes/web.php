@@ -16,3 +16,6 @@ use App\Http\Controllers\CrudUserController;
 Route::get('dashboard', [CrudUserController::class, 'dashboard']);
 
 Route::get('login', [CrudUserController::class, 'login'])->name('login');
+
+Route::get('register', [CrudUserController::class, 'registerUser'])->name('user.registerUser');
+Route::post('register', [CrudUserController::class, 'postUser'])->name('user.postUser');
