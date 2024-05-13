@@ -3,6 +3,7 @@
 <div class="container mt-5">
     <div class="card">
         <div class="card-body">
+        <a href="{{ Route('staff.add') }}" class="btn btn-success">Add</a>
             <h2 class="card-title text-center mb-4">Danh Sách Nhân Viên</h2>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -12,27 +13,33 @@
                             <th scope="col">Avatar</th>
                             <th scope="col">Username</th>
                             <th scope="col">Email</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Wage</th>
                             <th scope="col" class="text-center">Thao Tác</th>
                         </tr>
                     </thead>
 
 
-                    <tbody>  
+                    <tbody>
+                        @foreach($staffs as $staff)
                         <tr>
-                            <td></td>
-                            <td><img src="" alt="Avatar" style="max-width: 100px; max-height: 100px;"></td>
-                            <td></td>
-                            <td></td>
+                            <td>{{ $staff->id }}</td>
+                            <td><img src="{{ $staff->avatar }}" alt="Avatar" style="max-width: 100px; max-height: 100px;"></td>
+                            <td>{{ $staff->name }}</td>
+                            <td>{{ $staff->email }}</td>
+                            <td>{{ $staff->phone }}</td>
+                            <td>{{ $staff->wage }}</td>
                             <td class="text-center" style="padding-top: 10px;">
                                 <a href="" class="btn btn-primary">Edit</a>
                                 <a href="" class="btn btn-danger ml-2">Delete</a>
-                                <a href="{{ Route('staff.add') }}" class="btn btn-success ml-2">Add</a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
 
                 </table>
                 <div class="d-flex justify-content-center mt-4">
+                    {{ $staffs->links() }}
                 </div>
             </div>
 

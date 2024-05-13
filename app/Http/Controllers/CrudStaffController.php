@@ -5,12 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Staff;
+use Illuminate\Support\Facades\Auth;
 class CrudStaffController extends Controller
 {
-    public function listStaff()
-    {
-        return view('crud_staff.list_staff');
-    }
     public function addStaff()
     {
         return view('crud_staff.add_staff');
@@ -56,5 +53,11 @@ class CrudStaffController extends Controller
     
         return redirect("home");
     }
-
+    public function listStaff()
+    {
+        if (Auth::check()) {
+            $staffs = Staff::paginate(4); // Lấy 4 người dùng mỗi trang
+            return view('crud_staff.list_staff', ['staffs' => $staffs]);
+        }
+    }
 }
