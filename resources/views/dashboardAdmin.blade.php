@@ -37,13 +37,13 @@
                     <h5 class="sidebar-heading p-3">Menu</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link sidebar-link" href="#"><i class="fas fa-home"></i> Trang chủ</a>
+                            <a class="nav-link sidebar-link" href="{{ route('home') }}"><i class="fas fa-home"></i> Trang chủ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-box-open"></i> Quản lý sản phẩm</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-users"></i> Quản lý người dùng</a>
+                            <a class="nav-link" href="{{ route('user.list') }}"><i class="fas fa-users"></i> Quản lý người dùng</a>
                         </li>
                         
                         <li class="nav-item">
