@@ -45,7 +45,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user.list') }}"><i class="fas fa-users"></i> Quản lý người dùng</a>
                         </li>
-                        
+                       
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-newspaper"></i> Quản lý tin tức</a>
                         </li>
@@ -62,7 +62,7 @@
                             <a class="nav-link" href="#"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-users"></i> Quản lý nhân viên </a>
+                            <a class="nav-link" href="{{ route('staff.list') }}"><i class="fas fa-users"></i> Quản lý nhân viên </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-chart-bar"></i> Thống kê</a>

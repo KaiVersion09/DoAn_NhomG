@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
+use App\Http\Controllers\CrudStaffController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,7 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboardAdmin']);
 Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
+//staff
+Route::get('staff/list', [CrudStaffController::class, 'listStaff'])->name('staff.list');
+Route::get('staff/add', [CrudStaffController::class, 'addStaff'])->name('staff.add');
+Route::post('staff/add', [CrudStaffController::class, 'postStaff'])->name('staff.post');
