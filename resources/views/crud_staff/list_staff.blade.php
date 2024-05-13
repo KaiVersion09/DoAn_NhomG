@@ -3,7 +3,7 @@
 <div class="container mt-5">
     <div class="card">
         <div class="card-body">
-        <a href="{{ Route('staff.add') }}" class="btn btn-success">Add</a>
+            <a href="{{ Route('staff.add') }}" class="btn btn-success">Add</a>
             <h2 class="card-title text-center mb-4">Danh Sách Nhân Viên</h2>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -31,7 +31,7 @@
                             <td>{{ $staff->wage }}</td>
                             <td class="text-center" style="padding-top: 10px;">
                                 <a href="" class="btn btn-primary">Edit</a>
-                                <a href="" class="btn btn-danger ml-2">Delete</a>
+                                <a href="{{ route('staff.delete', ['id' => $staff->id]) }}" class="btn btn-danger ml-2">Delete</a>
                             </td>
                         </tr>
                         @endforeach
