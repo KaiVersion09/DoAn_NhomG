@@ -14,18 +14,14 @@ use App\Http\Controllers\CrudUserController;
 |
 */
 
-<<<<<<< HEAD
 Route::get('dashboard', [CrudUserController::class, 'dashboard']);
-
 Route::get('login', [CrudUserController::class, 'login'])->name('login');
 Route::get('home', [CrudUserController::class, 'home'])->name('home');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 Route::get('register', [CrudUserController::class, 'registerUser'])->name('user.registerUser');
 Route::post('register', [CrudUserController::class, 'postUser'])->name('user.postUser');
-=======
+Route::get('list_user', [CrudUserController::class, 'listUser'])->name('user.list');
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard']);
-
->>>>>>> dashboard_admin
+Route::get('/admin/dashboard', [AdminController::class, 'dashboardAdmin']);

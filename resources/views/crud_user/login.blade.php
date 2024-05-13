@@ -31,7 +31,7 @@
                         <button type="submit" class="btn btn-dark btn-block">Đăng nhập</button>
                     </form>
                     <div class="text-center mt-2">
-                        <a href="#">Chưa có tài khoản?</a>
+                        <a href="{{ route('user.registerUser') }}">Chưa có tài khoản?</a>
                     </div>
                 </div>
             </div>

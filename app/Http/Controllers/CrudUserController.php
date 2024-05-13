@@ -16,6 +16,20 @@ class CrudUserController extends Controller
     {
         return view('crud_user.login');
     }
+    public function list()
+    {
+        return view('crud_user.list_user');
+    }
+    public function listUser()
+    {
+        if (Auth::check()) {
+            $users = User::paginate(4); // Lấy 4 người dùng mỗi trang
+            return view('crud_user.list_user', ['users' => $users]);
+        }
+
+        return redirect("login")->withSuccess('You are not allowed to access');
+    }
+    
     //register 
     public function registerUser()
     { 
@@ -76,7 +90,7 @@ class CrudUserController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('home')
+            return redirect()->intended('list_user')
                 ->withSuccess('Signed in');
         }
 
