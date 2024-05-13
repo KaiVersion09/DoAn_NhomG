@@ -1,4 +1,4 @@
-@extends('dashboard')
+@extends('dashboardAdmin')
 @section('content')
 <!-- Form Cập Nhật Thông Tin -->
 <div class="container mt-5">
@@ -57,7 +57,6 @@
             </div>
             <div class="mb-3 row">
               <div class="col-sm-8 offset-sm-4 text-end">
-                <a href="#">Đã có tài khoản?</a>
                 <button type="submit" class="btn btn-primary btn-block">Cập Nhật</button>
               </div>
             </div>
