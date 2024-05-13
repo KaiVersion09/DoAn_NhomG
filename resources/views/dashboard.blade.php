@@ -47,7 +47,7 @@
                 @else
                 <div class="navbar-nav ml-auto">
       <a class="nav-item nav-link" href="#"><span class="fas fa-shopping-cart">Giỏ hàng</span></a>
-      <a class="nav-item nav-link" href="#"><span class="fas fa-user-alt">Người dùng</span></a>	
+      <a class="nav-item nav-link" href="{{ Route('logout') }}"><span class="fas fa-user-alt">Đăng Xuất</span></a>	
     </div>
                 @endguest
 

@@ -20,3 +20,4 @@ Route::get('home', [CrudUserController::class, 'home'])->name('home');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 Route::get('register', [CrudUserController::class, 'registerUser'])->name('user.registerUser');
 Route::post('register', [CrudUserController::class, 'postUser'])->name('user.postUser');
+Route::get('logout', [CrudUserController::class, 'logout'])->name('logout');;

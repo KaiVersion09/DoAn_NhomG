@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Favorities;
 use App\Models\Posts;
 use Illuminate\Support\Facades\Hash;
@@ -9,6 +10,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+
 class CrudUserController extends Controller
 {
     //Hien thi trang dang nhap
@@ -18,8 +20,8 @@ class CrudUserController extends Controller
     }
     //register 
     public function registerUser()
-    { 
-            return view('crud_user.register');
+    {
+        return view('crud_user.register');
     }
     public function postUser(Request $request)
     {
@@ -81,5 +83,11 @@ class CrudUserController extends Controller
         }
 
         return redirect("login")->withSuccess('Login details are not valid');
+    }
+    public function logout()
+    {
+        Session::flush();
+        Auth::logout();
+        return Redirect('login');
     }
 }
