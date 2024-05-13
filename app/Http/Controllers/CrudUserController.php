@@ -119,7 +119,7 @@ class CrudUserController extends Controller
         return view('crud_user.update_user', ['user' => $user]);
     }
 
-    /**
+/**
      * Submit form update user
      */
     public function postUpdateUser(Request $request)
@@ -160,5 +160,5 @@ class CrudUserController extends Controller
     $user->save();
 
     return redirect("list_user")->withSuccess('You have signed-in');
-    }
+    } 
 }

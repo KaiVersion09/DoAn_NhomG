@@ -47,7 +47,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-newspaper"></i> Quản lý tin tức</a>
+                            <a class="nav-link" href="{{ route('listNews') }}"><i class="fas fa-newspaper"></i> Quản lý tin tức</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-bell"></i> Quản lý thông báo</a>
