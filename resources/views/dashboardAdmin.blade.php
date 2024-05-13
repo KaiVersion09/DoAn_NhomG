@@ -13,21 +13,29 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-        <a class="navbar-brand" href="#">Dashboard - Admin</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Cài đặt</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Đăng xuất</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <a class="navbar-brand" href="#">Dashboard - Admin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#">Cài đặt</a>
+            </li>
+            <li class="nav-item dropdown order-md-0 order-lg-1">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="path_to_avatar_image" alt="Avatar" class="avatar">
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Thông tin admin</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Đăng xuất</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 
     <!-- Main Content -->
     <div class="container-fluid">
@@ -40,12 +48,9 @@
                             <a class="nav-link sidebar-link" href="#"><i class="fas fa-home"></i> Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-box-open"></i> Quản lý sản phẩm</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-users"></i> Quản lý người dùng</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-newspaper"></i> Quản lý tin tức</a>
                         </li>
@@ -59,7 +64,7 @@
                             <a class="nav-link" href="#"><i class="fas fa-hamburger"></i> Quản lý món ăn</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-chart-bar"></i> Quản lý danh mục</a>
+                            <a class="nav-link" href="#"><i class="fas fa-box"></i> Quản lý danh mục</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
@@ -76,19 +81,19 @@
 
             <!-- Phần nội dung chính ở đây -->
             @yield('content')
-    </div>
-
-    <!-- Footer -->
-    <footer class="fixed-bottom text-lg-start bg-dark text-white p-2">
-        <div class="text-md-left p-2">
-            <p class="mb-0"> &copy; Copyright Nhóm G - Đồ án Back End 2</p>
-
         </div>
-    </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Footer -->
+        <footer class="fixed-bottom text-lg-start bg-dark text-white p-2">
+            <div class="text-md-left p-2">
+                <p class="mb-0"> &copy; Copyright Nhóm G - Đồ án Back End 2</p>
+
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
