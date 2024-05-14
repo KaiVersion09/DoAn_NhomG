@@ -69,7 +69,7 @@ class CrudStaffController extends Controller
     public function deleteStaff(Request $request)
     {
         $staff_id = $request->get('id');
-        $staff = Staff::destroy($staff_id);
+        $staffs = Staff::destroy($staff_id);
 
         // Lấy lại danh sách nhân viên sau khi xóa
         $staffs = Staff::paginate(4);

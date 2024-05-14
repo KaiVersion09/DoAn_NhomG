@@ -24,7 +24,13 @@
                         @foreach($staffs as $staff)
                         <tr>
                             <td>{{ $staff->id }}</td>
-                            <td><img src="{{ $staff->avatar }}" alt="Avatar" style="max-width: 100px; max-height: 100px;"></td>
+                            <td>
+                                @if($staff->avatar)
+                                <img src="{{ asset($staff->avatar) }}" alt="Avatar" style="max-width: 100px; max-height: 100px;">
+                                @else
+                                <img src="{{ asset('default-avatar.png') }}" alt="Avatar" style="max-width: 100px; max-height: 100px;">
+                                @endif
+                            </td>
                             <td>{{ $staff->name }}</td>
                             <td>{{ $staff->email }}</td>
                             <td>{{ $staff->phone }}</td>

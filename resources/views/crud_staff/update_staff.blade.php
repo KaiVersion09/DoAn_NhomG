@@ -5,7 +5,7 @@
     <div class="col-md-8">
       <form method="post" action="{{ route('staff.postUpdateStaff') }}" enctype="multipart/form-data">
         @csrf
-        <input name="id" type="hidden" value="{{$staff->id}}">
+        <input name="id" type="hidden" value="{{ $staff->id }}">
         <div class="mb-2 row">
           <label for="name" class="col-sm-4 col-form-label">Tên đăng nhập:</label>
           <div class="col-sm-8">
@@ -36,7 +36,7 @@
         <div class="mb-2 row">
           <label for="email" class="col-sm-4 col-form-label">Email:</label>
           <div class="col-sm-8">
-            <input type="email" class="form-control" name="email" id="email" value="{{$staff->email}}">
+            <input type="email" class="form-control" name="email" id="email" value="{{ $staff->email }}">
             @if ($errors->has('email'))
             <span class="text-danger">{{ $errors->first('email') }}</span>
             @endif
@@ -45,7 +45,7 @@
         <div class="mb-2 row">
           <label for="phone" class="col-sm-4 col-form-label">Số Điện Thoại:</label>
           <div class="col-sm-8">
-            <input type="phone" class="form-control" name="phone" id="phone" value="{{$staff->phone}}">
+            <input type="phone" class="form-control" name="phone" id="phone" value="{{ $staff->phone }}">
             @if ($errors->has('phone'))
             <span class="text-danger">{{ $errors->first('phone') }}</span>
             @endif
@@ -54,7 +54,7 @@
         <div class="mb-2 row">
           <label for="wage" class="col-sm-4 col-form-label">Lương:</label>
           <div class="col-sm-8">
-            <input type="wage" class="form-control" name="wage" id="wage" value="{{$staff->wage}}">
+            <input type="wage" class="form-control" name="wage" id="wage" value="{{ $staff->wage }}">
             @if ($errors->has('wage'))
             <span class="text-danger">{{ $errors->first('wage') }}</span>
             @endif
@@ -63,6 +63,11 @@
         <div class="mb-2 row">
           <label for="avatar" class="col-sm-4 col-form-label">Chọn ảnh:</label>
           <div class="col-sm-8">
+            @if($staff->avatar)
+              <img src="{{ asset($staff->avatar) }}" alt="Avatar hiện tại" style="max-width: 100px; max-height: 100px;" class="mb-2">
+            @else
+              <img src="{{ asset('default-avatar.png') }}" alt="Avatar mặc định" style="max-width: 100px; max-height: 100px;" class="mb-2">
+            @endif
             <input type="file" class="form-control-file" name="avatar" id="avatar">
             @if ($errors->has('avatar'))
             <span class="text-danger">{{ $errors->first('avatar') }}</span>
@@ -71,7 +76,7 @@
         </div>
         <div class="mb-2 row">
           <div class="col-sm-8 offset-sm-4 text-end">
-            <button type="submit" class="btn btn-dark btn-block">Thêm</button>
+            <button type="submit" class="btn btn-dark btn-block">Thay Đổi</button>
           </div>
         </div>
       </form>
