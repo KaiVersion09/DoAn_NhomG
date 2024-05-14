@@ -48,4 +48,4 @@ Route::get('listbranches', [CrudBranchesController::class, 'listBranches'])->nam
 Route::get('updatebranches', [CrudBranchesController::class, 'updatebranches'])->name('updatebranches');
 Route::post('updatebranches', [CrudBranchesController::class, 'postUpdatebranches'])->name('updatebranches.postUpdatebranches');
 
-
+Route::get('deletebranches', [CrudBranchesController::class, 'deletebranches'])->name('deletebranches');

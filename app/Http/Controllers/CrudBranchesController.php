@@ -71,4 +71,17 @@ class CrudBranchesController extends Controller
 
         return redirect()->route('listbranches')->withSuccess('Thông tin chi nhánh đã được cập nhật thành công.');
     }
+
+    public function deletebranches(Request $request)
+    {
+        $branch_id = $request->get('branches_id');
+        $branch = Branch::destroy($branch_id);
+    
+        if (!$branch) {
+            return redirect()->back()->withError('Chi nhánh không tồn tại.');
+        }
+    
+        return redirect("listbranches")->withSuccess('You have signed-in');
+    }
+
 }
