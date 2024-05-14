@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CrudBranchesController;
 use App\Http\Controllers\CrudFoodController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
@@ -39,3 +40,8 @@ Route::get('admin/updatefood', [CrudFoodController::class, 'updateFood'])->name(
 Route::post('admin/updatefood', [CrudFoodController::class, 'postUpdateFood'])->name('food.postUpdateFood');
 
 Route::get('delete', [CrudFoodController::class, 'deleteFood'])->name('food.deleteFood');
+
+//branches
+Route::get('listbranches', [CrudBranchesController::class, 'listBranches'])->name('listbranches');;
+
+
