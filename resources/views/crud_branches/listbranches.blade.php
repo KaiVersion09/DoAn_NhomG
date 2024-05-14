@@ -26,7 +26,7 @@
                             <td>{{ $branch->branches_phone }}</td>
                             <td>{{ $branch->branches_address }}</td>
                             <td class="text-center" style="padding-top: 10px;">
-                          
+                            <a href="{{ route('updatebranches', ['branches_id' => $branch->branches_id]) }}" class="btn btn-primary btn-sm">Sửa</a>            
                             </td>
 
                         </tr>
