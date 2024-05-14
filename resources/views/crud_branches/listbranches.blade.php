@@ -6,7 +6,7 @@
         <div class="card-body">
             <h2 class="card-title text-center mb-4">Danh Sách Chi Nhánh</h2>
             <div class="table-responsive">
-                <a href="{{ route('listbranches') }}" class="btn btn-secondary mb-2">Add</a>
+                <a href="{{ route('addbranches') }}" class="btn btn-secondary mb-2">Add</a>
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
@@ -26,7 +26,7 @@
                             <td>{{ $branch->branches_phone }}</td>
                             <td>{{ $branch->branches_address }}</td>
                             <td class="text-center" style="padding-top: 10px;">
-
+                          
                             </td>
 
                         </tr>

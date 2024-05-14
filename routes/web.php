@@ -42,6 +42,8 @@ Route::post('admin/updatefood', [CrudFoodController::class, 'postUpdateFood'])->
 Route::get('delete', [CrudFoodController::class, 'deleteFood'])->name('food.deleteFood');
 
 //branches
+Route::get('addbranches', [CrudBranchesController::class, 'addbranches'])->name('addbranches');
+Route::post('addbranches', [CrudBranchesController::class, 'postaddBranch'])->name('addbranches.postaddBranch');
 Route::get('listbranches', [CrudBranchesController::class, 'listBranches'])->name('listbranches');;
 
 
