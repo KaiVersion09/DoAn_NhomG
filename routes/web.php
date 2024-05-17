@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CrudFoodController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
+use App\Http\Controllers\CrudVoucherController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,3 +41,5 @@ Route::get('admin/updatefood', [CrudFoodController::class, 'updateFood'])->name(
 Route::post('admin/updatefood', [CrudFoodController::class, 'postUpdateFood'])->name('food.postUpdateFood');
 
 Route::get('delete', [CrudFoodController::class, 'deleteFood'])->name('food.deleteFood');
+
+Route::get('list_voucher', [CrudVoucherController::class, 'listVoucher'])->name('voucher.list');
