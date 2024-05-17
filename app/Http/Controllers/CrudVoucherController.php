@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CrudVoucherController extends Controller
 {
-    public function voucher()
+    public function list()
     {
         return view('crud_voucher.listvoucher');
     }
