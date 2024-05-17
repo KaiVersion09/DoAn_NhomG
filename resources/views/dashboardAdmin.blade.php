@@ -13,28 +13,28 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-    <a class="navbar-brand" href="#">Dashboard - Admin</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">Cài đặt</a>
-            </li>
-            <li class="nav-item dropdown order-md-0 order-lg-1">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src="path_to_avatar_image" alt="Avatar" class="avatar">
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Thông tin admin</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Đăng xuất</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <a class="navbar-brand" href="#">Dashboard - Admin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Cài đặt</a>
+                </li>
+                <li class="nav-item dropdown order-md-0 order-lg-1">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="path_to_avatar_image" alt="Avatar" class="avatar">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Thông tin admin</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Đăng xuất</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
 
     <!-- Main Content -->
@@ -48,14 +48,11 @@
                             <a class="nav-link sidebar-link" href="{{ route('home') }}"><i class="fas fa-home"></i> Trang chủ</a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
                             <a class="nav-link" href="#"><i class="fas fa-box-open"></i> Quản lý sản phẩm</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user.list') }}"><i class="fas fa-users"></i> Quản lý người dùng</a>
-=======
                             <a class="nav-link" href="#"><i class="fas fa-users"></i> Quản lý người dùng</a>
->>>>>>> origin/dashboard_admin
                         </li>
 
                         <li class="nav-item">
@@ -71,14 +68,12 @@
                             <a class="nav-link" href="{{ route('food.list') }}"><i class="fas fa-hamburger"></i> Quản lý món ăn</a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
                             <a class="nav-link" href="{{ route('listbranches') }}"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
-=======
                             <a class="nav-link" href="#"><i class="fas fa-box"></i> Quản lý danh mục</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
->>>>>>> origin/dashboard_admin
+
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-users"></i> Quản lý nhân viên </a>
