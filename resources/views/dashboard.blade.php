@@ -57,7 +57,9 @@
                 @endguest
 
   </nav>
+  
     @yield('content')
+
     <footer class="text-center fixed-bottom text-lg-start bg-dark text-white">
     <div class="row justify-content-center text-md-center">
     <div class="col-md-3">
