@@ -5,7 +5,6 @@ use App\Models\Favorities;
 use App\Models\Posts;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
-use App\Models\User;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,9 +17,10 @@ class CrudNewsController extends Controller
             $news = News::paginate(4); 
             return view('crud_news.list_news', ['news' => $news]);
         }
-
+    
         return redirect("login")->withSuccess('You are not allowed to access');
     }
+    
     public function addNews()
     {
         return view('crud_news.add_news');
@@ -82,7 +82,7 @@ public function updateNews(Request $request)
         'image' => $imagePath,
     ]);
 
-    return redirect()->back()->with('success', 'Tin tức đã được thêm thành công.');
+    return redirect()->route('listNews')->with('success', 'Tin tức đã được thêm thành công.');
 }
 
 public function postUpdateNews(Request $request)
