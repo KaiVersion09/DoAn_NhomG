@@ -27,6 +27,10 @@
                             <td>{{ $voucher->start_date }}</td>
                             <td>{{ $voucher->end_date }}</td>
                             <td>{{ $voucher->code }}</td>
+                            <td class="text-center" style="padding-top: 10px;">
+                                <a href="{{ route('voucher.edit', ['id' => $voucher->voucher_id]) }}" class="btn btn-primary">Edit</a>
+                                <a href="3" class="btn btn-danger ml-2">Delete</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
