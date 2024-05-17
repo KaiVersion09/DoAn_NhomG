@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\branch;
+use App\Models\Branch;
 use Illuminate\Http\Request;
 
 class CrudBranchesController extends Controller
@@ -14,9 +14,11 @@ class CrudBranchesController extends Controller
 
     public function listBranches()
     {
-        $branches = branch::paginate(4); // Lấy 4 món ăn trên mỗi trang
+        $branches = Branch::paginate(4); 
         return view('crud_branches.listbranches', ['branches' => $branches]);
     }
+    
+    
     public function addbranches()
     {
         return view('crud_branches.addbranches');
@@ -32,21 +34,21 @@ class CrudBranchesController extends Controller
 
         Branch::create($request->all());
 
-        return redirect()->route('listbranches')->withSuccess('Thêm chi nhánh thành công.');
+        return redirect()->route('listbranches')->with('success', 'Thêm chi nhánh thành công.');
     }
 
     public function updatebranches(Request $request)
     {
-        $branch_id = $request->get('branches_id');
+        $branch_id = $request->get('id');
         $branch = Branch::find($branch_id);
 
         if (!$branch) {
-            return redirect()->back()->withError('Không tìm thấy chi nhánh.');
+            return redirect()->back()->with('error', 'Không tìm thấy chi nhánh.');
         }
 
         return view('crud_branches.updatebranches', ['branch' => $branch]);
-
     }
+
     public function postUpdatebranches(Request $request)
     {
         $request->validate([
@@ -55,33 +57,29 @@ class CrudBranchesController extends Controller
             'branches_address' => 'required',
         ]);
 
-        $branch_id = $request->input('branches_id');
+        $branch_id = $request->input('id');
         $branch = Branch::find($branch_id);
 
-        // Kiểm tra xem chi nhánh có tồn tại không
         if (!$branch) {
-            return redirect()->back()->withError('Chi nhánh không tồn tại.');
+            return redirect()->back()->with('error', 'Chi nhánh không tồn tại.');
         }
 
-        $branch->branches_name = $request->input('branches_name');
-        $branch->branches_phone = $request->input('branches_phone');
-        $branch->branches_address = $request->input('branches_address');
+        $branch->update($request->all());
 
-        $branch->save();
-
-        return redirect()->route('listbranches')->withSuccess('Thông tin chi nhánh đã được cập nhật thành công.');
+        return redirect()->route('listbranches')->with('success', 'Thông tin chi nhánh đã được cập nhật thành công.');
     }
 
     public function deletebranches(Request $request)
     {
-        $branch_id = $request->get('branches_id');
-        $branch = Branch::destroy($branch_id);
-    
-        if (!$branch) {
-            return redirect()->back()->withError('Chi nhánh không tồn tại.');
-        }
-    
-        return redirect("listbranches")->withSuccess('You have signed-in');
-    }
+        $branch_id = $request->get('id');
+        $branch = Branch::find($branch_id);
 
+        if (!$branch) {
+            return redirect()->back()->with('error', 'Chi nhánh không tồn tại.');
+        }
+
+        $branch->delete();
+
+        return redirect()->route('listbranches')->with('success', 'Chi nhánh đã được xóa thành công.');
+    }
 }

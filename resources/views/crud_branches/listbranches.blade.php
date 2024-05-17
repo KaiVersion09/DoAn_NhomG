@@ -21,13 +21,13 @@
                     <tbody>
                         @foreach($branches as $branch)
                         <tr>
-                            <td>{{ $branch->branches_id }}</td>
+                            <td>{{ $branch->id }}</td>
                             <td>{{ $branch->branches_name }}</td>
                             <td>{{ $branch->branches_phone }}</td>
                             <td>{{ $branch->branches_address }}</td>
                             <td class="text-center" style="padding-top: 10px;">
-                            <a href="{{ route('updatebranches', ['branches_id' => $branch->branches_id]) }}" class="btn btn-primary btn-sm">Sửa</a>
-                            <a href="{{ route('deletebranches', ['branches_id' => $branch->branches_id]) }}" class="btn btn-danger ml-2">Xóa</a>            
+                            <a href="{{ route('updatebranches', ['id' => $branch->id]) }}" class="btn btn-primary btn-sm">Sửa</a>
+                            <a href="{{ route('deletebranches', ['id' => $branch->id]) }}" class="btn btn-danger ml-2">Xóa</a>            
                             </td>
 
                         </tr>
@@ -43,6 +43,4 @@
 
     </div>
 </div>
-
-
 @endsection

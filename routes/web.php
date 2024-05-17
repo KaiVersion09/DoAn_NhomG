@@ -33,8 +33,6 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboardAdmin']);
 Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
-<<<<<<< HEAD
-
 
 Route::get('admin/food', [CrudFoodController::class, 'food'])->name('food');
 Route::get('list_food', [CrudFoodController::class, 'listFood'])->name('food.list');
@@ -52,7 +50,6 @@ Route::get('updatebranches', [CrudBranchesController::class, 'updatebranches'])-
 Route::post('updatebranches', [CrudBranchesController::class, 'postUpdatebranches'])->name('updatebranches.postUpdatebranches');
 
 Route::get('deletebranches', [CrudBranchesController::class, 'deletebranches'])->name('deletebranches');
-=======
 //staff
 Route::get('staff/list', [CrudStaffController::class, 'listStaff'])->name('staff.list');
 Route::get('staff/add', [CrudStaffController::class, 'addStaff'])->name('staff.add');
@@ -67,4 +64,4 @@ Route::post('dinnertable/add', [CrudDinnerTableController::class, 'postDinnerTab
 Route::get('dinnertable/update', [CrudDinnerTableController::class, 'updateDinnerTable'])->name('table.update');
 Route::post('dinnertable/update', [CrudDinnerTableController::class, 'postUpdateDinnerTable'])->name('table.postUpdateTable');
 Route::get('dinnertable/delete', [CrudDinnerTableController::class, 'deletedinnerTable'])->name('table.delete');
->>>>>>> delete_dinnertable
+

@@ -9,12 +9,12 @@ class DinnerTable extends Model
 {
     use HasFactory;
 
-    // Khai báo tên bảng nếu khác với tên model chuẩn
-    protected $table = 'dinnertable';
-    
-    protected $fillable = [
-        'image',
-        'name',
-        'chair',
-    ];
+    protected $table = 'dinnertables'; // Đổi tên bảng thành 'dinnertables'
+    protected $primaryKey = 'id'; // Đặt tên primary key là 'id'
+    protected $fillable = ['image', 'name', 'chair', 'branch_id']; // Sửa fillable
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class, 'branch_id', 'id'); // Mối quan hệ nhiều-một
+    }
 }

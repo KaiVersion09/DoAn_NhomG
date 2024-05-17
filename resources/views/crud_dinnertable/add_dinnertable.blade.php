@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row justify-content-center mt-5">
         <div class="col-md-8">
-            <form method="post" action="{{ route('dinnertable.post')  }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('dinnertable.post') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-2 row">
                     <label for="name" class="col-sm-4 col-form-label">Tên Bàn:</label>
@@ -15,12 +15,26 @@
                     </div>
                 </div>
                 <div class="mb-2 row">
-                    <label for="email" class="col-sm-4 col-form-label">Số Ghế:</label>
+                    <label for="chair" class="col-sm-4 col-form-label">Số Ghế:</label>
                     <div class="col-sm-8">
-                        <input type="chair" class="form-control" name="chair" id="chair" placeholder="Nhập Số Ghế">
+                        <input type="number" class="form-control" name="chair" id="chair" placeholder="Nhập Số Ghế">
                         @if ($errors->has('chair'))
                         <span class="text-danger">{{ $errors->first('chair') }}</span>
                         @endif
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="branch" class="col-sm-4 col-form-label">Chi Nhánh:</label>
+                    <div class="col-sm-8">
+                        <select class="form-select" name="branch" id="branch">
+                            <option value="">Chọn Chi Nhánh</option>
+                            @foreach($branches as $branch)
+                            <option value="{{ $branch->id }}">{{ $branch->branches_name }}</option>
+                            @endforeach
+                        </select>
+                        @error('branch')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                 </div>
                 <div class="mb-2 row">
@@ -38,7 +52,6 @@
                         <button type="submit" class="btn btn-dark btn-block">Thêm</button>
                     </div>
                 </div>
-
             </form>
         </div>
     </div>

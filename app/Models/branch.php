@@ -2,18 +2,19 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Broadcasting\HasBroadcastChannel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class branch extends Model
+class Branch extends Model
 {
     use HasFactory;
 
     protected $table = 'branches';
-    protected $primaryKey = 'branches_id';
-
-    public $incrementing = true;
+    protected $primaryKey = 'id'; // Chỉnh sửa tên cột primary key thành 'id'
     protected $fillable = ['branches_name', 'branches_phone', 'branches_address'];
 
+    public function dinnerTables()
+    {
+        return $this->hasMany(DinnerTable::class, 'branch_id', 'id'); // Mối quan hệ một-nhiều
+    }
 }

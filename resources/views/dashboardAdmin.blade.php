@@ -54,11 +54,6 @@
                             <a class="nav-link" href="{{ route('user.list') }}"><i class="fas fa-users"></i> Quản lý người dùng</a>
                             <a class="nav-link" href="#"><i class="fas fa-users"></i> Quản lý người dùng</a>
                         </li>
-<<<<<<< HEAD
-
-=======
-                       
->>>>>>> delete_dinnertable
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-newspaper"></i> Quản lý tin tức</a>
                         </li>
@@ -68,7 +63,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dinnertable.list') }}"><i class="fas fa-utensils"></i> Quản lý bàn ăn</a>
                         </li>
-                      
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('food.list') }}"><i class="fas fa-hamburger"></i> Quản lý món ăn</a>
                         </li>

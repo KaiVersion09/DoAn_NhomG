@@ -24,6 +24,21 @@
                         @endif
                     </div>
                 </div>
+                <div class="mb-3 row">
+                    <label for="branch" class="col-sm-4 col-form-label">Chi Nhánh:</label>
+                    <div class="col-sm-8">
+                        <select class="form-select" name="branch" id="branch">
+                            <option value="">Chọn Chi Nhánh</option>
+                            @foreach($branches as $branch)
+                            <option value="{{ $branch->id }}" {{ $branch->id == $tables->branch_id ? 'selected' : '' }}>{{ $branch->branches_name }}</option>
+                            @endforeach
+                        </select>
+                        @error('branch')
+                        <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
                 <div class="mb-2 row">
                     <label for="image" class="col-sm-4 col-form-label">Chọn ảnh:</label>
                     <div class="col-sm-8">

@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dinnertable', function (Blueprint $table) {
+        Schema::create('dinnertables', function (Blueprint $table) { // Chỉnh sửa tên bảng thành 'dinnertables'
             $table->id();
             $table->string('name'); // tên bàn
             $table->string('image'); // Cột ảnh
             $table->integer('chair'); // Cột số ghế
+            $table->unsignedBigInteger('branch_id'); // Thêm trường branch_id
+            $table->foreign('branch_id')->references('id')->on('branches');
             $table->timestamps();
         });
     }
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dinnertable');
+        Schema::dropIfExists('dinnertables');
     }
 };

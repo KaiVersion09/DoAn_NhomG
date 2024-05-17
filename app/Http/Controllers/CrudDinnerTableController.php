@@ -2,32 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Favorities;
-use App\Models\Posts;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
 use App\Models\DinnerTable;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
+use App\Models\Branch;
 
 class CrudDinnerTableController extends Controller
 {
     public function listDinnerTable()
     {
-        $tables = DinnerTable::paginate(4); // Lấy 4 người dùng mỗi trang
+        $tables = DinnerTable::with('branch')->paginate(4); // Lấy 4 bàn ăn mỗi trang và nối các bản ghi chi nhánh
         return view('crud_dinnertable.list_dinnertable', ['tables' => $tables]);
     }
-    public function addDinnerTable()
-    {
-        return view('crud_dinnertable.add_dinnertable');
-    }
+
     public function postDinnerTable(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:dinnertable',
+            'name' => 'required|unique:dinnertables',
             'chair' => 'required|integer|min:1', // Kiểm tra chair là số nguyên và lớn hơn hoặc bằng 1
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'branch' => 'required|exists:branches,id',
         ], [
             'name.required' => 'Vui lòng nhập tên bàn.',
             'name.unique' => 'Tên bàn đã tồn tại.',
@@ -37,8 +30,10 @@ class CrudDinnerTableController extends Controller
             'image.image' => 'File tải lên phải là ảnh.',
             'image.mimes' => 'Ảnh tải lên phải có định dạng jpeg, png, jpg hoặc gif.',
             'image.max' => 'Kích thước của ảnh không được vượt quá 2MB.',
+            'branch.required' => 'Vui lòng chọn chi nhánh.',
+            'branch.exists' => 'Chi nhánh không hợp lệ.',
         ]);
-        
+
 
         $data = $request->all();
 
@@ -56,6 +51,7 @@ class CrudDinnerTableController extends Controller
             'name' => $data['name'],
             'chair' => $data['chair'],
             'image' => $imagePath, // Save avatar path to the database
+            'branch_id' => $data['branch'], // Lưu trữ branch_id khi tạo mới bàn ăn
         ]);
 
         return redirect()->route('dinnertable.list'); // Sử dụng redirect thay vì trả về view
@@ -65,8 +61,9 @@ class CrudDinnerTableController extends Controller
     {
         $table_id = $request->get('id');
         $tables = DinnerTable::find($table_id);
+        $branches = Branch::all(); // Lấy danh sách các chi nhánh
 
-        return view('crud_dinnertable.update_dinnertable', ['tables' => $tables]);
+        return view('crud_dinnertable.update_dinnertable', ['tables' => $tables, 'branches' => $branches]);
     }
 
     public function postUpdateDinnerTable(Request $request)
@@ -74,9 +71,10 @@ class CrudDinnerTableController extends Controller
         $input = $request->all();
 
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:dinnertables,name,' . $input['id'], // Thêm điều kiện để kiểm tra tên bàn, trừ bỏ bàn hiện tại
             'chair' => 'required|integer|min:1', // Kiểm tra chair là số nguyên và lớn hơn hoặc bằng 1
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'branch' => 'required|exists:branches,id',
         ], [
             'name.required' => 'Vui lòng nhập tên bàn.',
             'name.unique' => 'Tên bàn đã tồn tại.',
@@ -86,9 +84,9 @@ class CrudDinnerTableController extends Controller
             'image.image' => 'File tải lên phải là ảnh.',
             'image.mimes' => 'Ảnh tải lên phải có định dạng jpeg, png, jpg hoặc gif.',
             'image.max' => 'Kích thước của ảnh không được vượt quá 2MB.',
+            'branch.required' => 'Vui lòng chọn chi nhánh.',
+            'branch.exists' => 'Chi nhánh không hợp lệ.',
         ]);
-        
-        
 
         // Tìm kiếm bàn ăn trong cơ sở dữ liệu
         $table = DinnerTable::find($input['id']);
@@ -97,6 +95,8 @@ class CrudDinnerTableController extends Controller
         if ($table) {
             $table->name = $input['name'];
             $table->chair = $input['chair'];
+            $table->branch_id = $input['branch']; // Cập nhật thông tin chi nhánh
+
             // Cập nhật ảnh nếu có
             if ($request->hasFile('image')) {
                 $image = $request->file('image');
@@ -116,6 +116,7 @@ class CrudDinnerTableController extends Controller
         }
     }
 
+
     public function deleteDinnerTable(Request $request)
     {
         $table_id = $request->get('id');
@@ -126,5 +127,14 @@ class CrudDinnerTableController extends Controller
 
         // Trả về view với danh sách bàn ăn đã cập nhật
         return view('crud_dinnertable.list_dinnertable', ['tables' => $tables]);
+    }
+
+    public function addDinnerTable()
+    {
+        // Lấy danh sách các chi nhánh
+        $branches = Branch::all();
+
+        // Trả về view 'add_dinnertable' với danh sách các chi nhánh
+        return view('crud_dinnertable.add_dinnertable', ['branches' => $branches]);
     }
 }
