@@ -54,12 +54,8 @@
   </nav>
   
     @yield('content')
-<<<<<<< HEAD
-
-    <footer class="text-center fixed-bottom text-lg-start bg-dark text-white">
-=======
     <footer class="text-center fixed-bottom text-lg-start bg-dark text-white p-3">
->>>>>>> Dashboard
+
     <div class="row justify-content-center text-md-center">
     <div class="col-md-4">
         <p><span><i class="fas fa-map-marker-alt"></i></span> Địa chỉ: 123 Đường ABC, Quận XYZ, TP. HCM</p>
