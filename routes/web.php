@@ -1,11 +1,16 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CrudBranchesController;
 use App\Http\Controllers\CrudFoodController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
+<<<<<<< HEAD
 use App\Http\Controllers\CrudVoucherController;
 
+=======
+use App\Http\Controllers\CrudCategoriesController;
+>>>>>>> origin/delete_categories
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +46,7 @@ Route::get('admin/updatefood', [CrudFoodController::class, 'updateFood'])->name(
 Route::post('admin/updatefood', [CrudFoodController::class, 'postUpdateFood'])->name('food.postUpdateFood');
 Route::get('delete', [CrudFoodController::class, 'deleteFood'])->name('food.deleteFood');
 
+<<<<<<< HEAD
 Route::get('admin/voucher', [CrudVoucherController::class, 'voucher'])->name('voucher');
 Route::post('admin/voucher', [CrudVoucherController::class, 'postVoucher'])->name('voucher.postVoucher');
 Route::get('list_voucher', [CrudVoucherController::class, 'listVoucher'])->name('voucher.list');
@@ -52,3 +58,22 @@ Route::get('deletevoucher', [CrudVoucherController::class, 'deleteVoucher'])->na
 
 
 
+=======
+//branches
+Route::get('addbranches', [CrudBranchesController::class, 'addbranches'])->name('addbranches');
+Route::post('addbranches', [CrudBranchesController::class, 'postaddBranch'])->name('addbranches.postaddBranch');
+Route::get('listbranches', [CrudBranchesController::class, 'listBranches'])->name('listbranches');;
+Route::get('updatebranches', [CrudBranchesController::class, 'updatebranches'])->name('updatebranches');
+Route::post('updatebranches', [CrudBranchesController::class, 'postUpdatebranches'])->name('updatebranches.postUpdatebranches');
+
+Route::get('deletebranches', [CrudBranchesController::class, 'deletebranches'])->name('deletebranches');
+
+//categories
+Route::get('listcategories', [CrudCategoriesController::class, 'listcategories'])->name('listcategories');
+Route::get('addcategories', [CrudCategoriesController::class, 'addcategories'])->name('addcategories');
+Route::post('addcategories', [CrudCategoriesController::class, 'postaddcategories'])->name('addcategories.postaddcategories');
+Route::get('updatecategories', [CrudCategoriesController::class, 'updatecategories'])->name('updatecategories');
+Route::post('updatecategories', [CrudCategoriesController::class, 'postupdatecategories'])->name('updatecategories.postupdatecategories');
+
+Route::get('deletecategories', [CrudCategoriesController::class, 'deletecategories'])->name('deletecategories');
+>>>>>>> origin/delete_categories
