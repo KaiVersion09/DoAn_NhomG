@@ -26,17 +26,19 @@ class CrudDinnerTableController extends Controller
     {
         $request->validate([
             'name' => 'required|unique:dinnertable',
-            'chair' => 'required|integer', // Kiểm tra chair là số nguyên
+            'chair' => 'required|integer|min:1', // Kiểm tra chair là số nguyên và lớn hơn hoặc bằng 1
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
-            'name.required' => 'Tên bàn là bắt buộc',
-            'name.unique' => 'Tên bàn đã tồn tại',
-            'chair.required' => 'Số ghế là bắt buộc',
-            'chair.integer' => 'Số ghế phải là một số nguyên', // Thêm thông báo cho trường hợp chair không phải là số nguyên
+            'name.required' => 'Vui lòng nhập tên bàn.',
+            'name.unique' => 'Tên bàn đã tồn tại.',
+            'chair.required' => 'Vui lòng nhập số ghế.',
+            'chair.integer' => 'Số ghế phải là một số nguyên.',
+            'chair.min' => 'Số ghế phải là một số lớn hơn hoặc bằng 1.', // Thêm thông báo khi số ghế không đạt điều kiện
             'image.image' => 'File tải lên phải là ảnh.',
             'image.mimes' => 'Ảnh tải lên phải có định dạng jpeg, png, jpg hoặc gif.',
             'image.max' => 'Kích thước của ảnh không được vượt quá 2MB.',
         ]);
+        
 
         $data = $request->all();
 
@@ -73,17 +75,19 @@ class CrudDinnerTableController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'chair' => 'required|integer',
+            'chair' => 'required|integer|min:1', // Kiểm tra chair là số nguyên và lớn hơn hoặc bằng 1
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ], [
             'name.required' => 'Vui lòng nhập tên bàn.',
             'name.unique' => 'Tên bàn đã tồn tại.',
             'chair.required' => 'Vui lòng nhập số ghế.',
             'chair.integer' => 'Số ghế phải là một số nguyên.',
+            'chair.min' => 'Số ghế phải là một số lớn hơn hoặc bằng 1.', // Thêm thông báo khi số ghế không đạt điều kiện
             'image.image' => 'File tải lên phải là ảnh.',
             'image.mimes' => 'Ảnh tải lên phải có định dạng jpeg, png, jpg hoặc gif.',
             'image.max' => 'Kích thước của ảnh không được vượt quá 2MB.',
         ]);
+        
         
 
         // Tìm kiếm bàn ăn trong cơ sở dữ liệu
