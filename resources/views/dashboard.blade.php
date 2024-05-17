@@ -53,31 +53,29 @@
 
   </nav>
     @yield('content')
-    <footer class="text-center fixed-bottom text-lg-start bg-dark text-white p-3">
+    <footer class="bg-dark text-white text-center text-lg-start mt-auto p-3">
     <div class="row justify-content-center text-md-center">
-    <div class="col-md-4">
-        <p><span><i class="fas fa-map-marker-alt"></i></span> Địa chỉ: 123 Đường ABC, Quận XYZ, TP. HCM</p>
-    </div>
-    <div class="col-md-4">
-        <p><span><i class="fas fa-phone-alt"></i></span> Hotline: 0123 456 789</p>
-    </div>
-    <div class="col-md-4">
-        <p>Hãy liên kết với chúng tôi</p>
-        <div class="d-flex justify-content-center">
-            <a href="#" class="text-white mr-3"><span class="fab fa-facebook-f"></span></a>
-            <a href="#" class="text-white mr-3"><span class="fab fa-tiktok"></span></a>
-            <a href="#" class="text-white"><span class="fab fa-instagram"></span></a>
+        <div class="col-md-4">
+            <p><span><i class="fas fa-map-marker-alt"></i></span> Địa chỉ: 123 Đường ABC, Quận XYZ, TP. HCM</p>
+        </div>
+        <div class="col-md-4">
+            <p><span><i class="fas fa-phone-alt"></i></span> Hotline: 0123 456 789</p>
+        </div>
+        <div class="col-md-4">
+            <p>Hãy liên kết với chúng tôi</p>
+            <div class="d-flex justify-content-center">
+                <a href="#" class="text-white mr-3"><span class="fab fa-facebook-f"></span></a>
+                <a href="#" class="text-white mr-3"><span class="fab fa-tiktok"></span></a>
+                <a href="#" class="text-white"><span class="fab fa-instagram"></span></a>
+            </div>
         </div>
     </div>
-</div>
+    <hr class="my-2 bg-white">
+    <div class="col-md-12 text-md-left p-2">
+        <p class="mb-0">&copy; Copyright Nhóm G - Đồ án Back End 2</p>
+    </div>
+</footer>
 
-      <hr class="my-2 bg-white"> 
-      
-        <div class="col-md-12 text-md-left p-2">
-          <p class="mb-0">&copy; Copyright Nhóm G - Đồ án Back End 2</p>
-       
-      </div>
-  </footer>
 
 </body>
 
