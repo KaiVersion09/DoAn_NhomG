@@ -41,3 +41,5 @@ Route::post('staff/update', [CrudStaffController::class, 'postUpdateStaff'])->na
 Route::get('dinnertable/list', [CrudDinnerTableController::class, 'listDinnerTable'])->name('dinnertable.list');
 Route::get('dinnertable/add', [CrudDinnerTableController::class, 'addDinnerTable'])->name('dinnertable.add');
 Route::post('dinnertable/add', [CrudDinnerTableController::class, 'postDinnerTable'])->name('dinnertable.post');
+Route::get('dinnertable/update', [CrudDinnerTableController::class, 'updateDinnerTable'])->name('table.update');
+Route::post('dinnertable/update', [CrudDinnerTableController::class, 'postUpdateDinnerTable'])->name('table.postUpdateTable');

@@ -30,7 +30,7 @@
                             <td>{{ $table->name }}</td>
                             <td>{{ $table->chair }}</td>
                             <td class="text-center" style="padding-top: 10px;">
-                              
+                                <a href="{{ route('table.update', ['id' => $table->id]) }}" class="btn btn-primary">Edit</a>
                             </td>
                         </tr>
                         @endforeach
