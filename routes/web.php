@@ -39,7 +39,8 @@ Route::get('list_food', [CrudFoodController::class, 'listFood'])->name('food.lis
 Route::post('admin/food', [CrudFoodController::class, 'postFood'])->name('food.postFood');
 Route::get('admin/updatefood', [CrudFoodController::class, 'updateFood'])->name('food.updateFood');
 Route::post('admin/updatefood', [CrudFoodController::class, 'postUpdateFood'])->name('food.postUpdateFood');
-
 Route::get('delete', [CrudFoodController::class, 'deleteFood'])->name('food.deleteFood');
 
+Route::get('admin/voucher', [CrudVoucherController::class, 'voucher'])->name('voucher');
+Route::post('admin/voucher', [CrudVoucherController::class, 'postVoucher'])->name('voucher.postVoucher');
 Route::get('list_voucher', [CrudVoucherController::class, 'listVoucher'])->name('voucher.list');
