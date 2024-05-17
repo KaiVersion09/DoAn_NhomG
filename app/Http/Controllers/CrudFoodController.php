@@ -26,7 +26,7 @@ class CrudFoodController extends Controller
 
     public function food()
     {
-        $categories = Category::all(); // Lấy tất cả các danh mục
+        $categories = Category::all(); 
         return view('crud_food.addfood', compact('categories'));
     }
 
