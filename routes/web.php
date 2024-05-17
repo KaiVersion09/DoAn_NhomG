@@ -6,6 +6,7 @@ use App\Http\Controllers\CrudFoodController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 use App\Http\Controllers\CrudCategoriesController;
+use App\Http\Controllers\CrudNotificationsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,3 +60,6 @@ Route::get('updatecategories', [CrudCategoriesController::class, 'updatecategori
 Route::post('updatecategories', [CrudCategoriesController::class, 'postupdatecategories'])->name('updatecategories.postupdatecategories');
 
 Route::get('deletecategories', [CrudCategoriesController::class, 'deletecategories'])->name('deletecategories');
+
+//notifications
+Route::get('listnotifications', [CrudNotificationsController::class, 'listnotifications'])->name('listnotifications');
