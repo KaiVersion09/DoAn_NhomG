@@ -6,21 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Đăng nhập - Đờ gút food</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    .container {
-      margin-top: 100px; /* Khoảng cách từ top */
-    }
-  </style>
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
     <a class="navbar-brand" href="#">Đờ gút food</a>
     <form class="form-inline ml-auto">
       <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Tìm kiếm</button>
+      <button class="btn btn-outline-light my-2 mr-sm-2  " type="submit">Tìm kiếm</button>
     </form>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -59,10 +54,14 @@
   </nav>
   
     @yield('content')
+<<<<<<< HEAD
 
     <footer class="text-center fixed-bottom text-lg-start bg-dark text-white">
+=======
+    <footer class="text-center fixed-bottom text-lg-start bg-dark text-white p-3">
+>>>>>>> Dashboard
     <div class="row justify-content-center text-md-center">
-    <div class="col-md-3">
+    <div class="col-md-4">
         <p><span><i class="fas fa-map-marker-alt"></i></span> Địa chỉ: 123 Đường ABC, Quận XYZ, TP. HCM</p>
     </div>
     <div class="col-md-4">
@@ -78,11 +77,11 @@
     </div>
 </div>
 
-      <hr class="my-4 bg-white"> 
-      <div class="row">
-        <div class="col-md-12 text-md-left">
+      <hr class="my-2 bg-white"> 
+      
+        <div class="col-md-12 text-md-left p-2">
           <p class="mb-0">&copy; Copyright Nhóm G - Đồ án Back End 2</p>
-        </div>
+       
       </div>
   </footer>
 
