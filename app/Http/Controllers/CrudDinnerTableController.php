@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Favorities;
 use App\Models\Posts;
 use Illuminate\Support\Facades\Hash;
@@ -9,13 +10,16 @@ use App\Models\DinnerTable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+
 class CrudDinnerTableController extends Controller
 {
     public function listDinnerTable()
     {
-        return view('crud_dinnertable.list_dinnertable');
+        $tables = DinnerTable::paginate(4); // Lấy 4 người dùng mỗi trang
+        return view('crud_dinnertable.list_dinnertable', ['tables' => $tables]);
     }
-    public function addDinnerTable(){
+    public function addDinnerTable()
+    {
         return view('crud_dinnertable.add_dinnertable');
     }
     public function postDinnerTable(Request $request)
