@@ -31,11 +31,12 @@
                             <td>{{ $table->chair }}</td>
                             <td class="text-center" style="padding-top: 10px;">
                                 <a href="{{ route('table.update', ['id' => $table->id]) }}" class="btn btn-primary">Edit</a>
+                                <a href="{{ route('table.delete', ['id' => $table->id]) }}" class="btn btn-danger ml-2">Delete</a>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
-
+                    
                 </table>
                 <div class="d-flex justify-content-center mt-4">
                     {{ $tables->links() }}

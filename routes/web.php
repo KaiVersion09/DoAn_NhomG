@@ -43,3 +43,4 @@ Route::get('dinnertable/add', [CrudDinnerTableController::class, 'addDinnerTable
 Route::post('dinnertable/add', [CrudDinnerTableController::class, 'postDinnerTable'])->name('dinnertable.post');
 Route::get('dinnertable/update', [CrudDinnerTableController::class, 'updateDinnerTable'])->name('table.update');
 Route::post('dinnertable/update', [CrudDinnerTableController::class, 'postUpdateDinnerTable'])->name('table.postUpdateTable');
+Route::get('dinnertable/delete', [CrudDinnerTableController::class, 'deletedinnerTable'])->name('table.delete');
