@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 use App\Http\Controllers\CrudStaffController;
+use App\Http\Controllers\CrudDinnerTableController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +37,7 @@ Route::post('staff/add', [CrudStaffController::class, 'postStaff'])->name('staff
 Route::get('staff/delete', [CrudStaffController::class, 'deleteStaff'])->name('staff.delete');
 Route::get('staff/update', [CrudStaffController::class, 'updateStaff'])->name('staff.updateStaff');
 Route::post('staff/update', [CrudStaffController::class, 'postUpdateStaff'])->name('staff.postUpdateStaff');
+//dinnertable
+Route::get('dinnertable/list', [CrudDinnerTableController::class, 'listDinnerTable'])->name('dinnertable.list');
+Route::get('dinnertable/add', [CrudDinnerTableController::class, 'addDinnerTable'])->name('dinnertable.add');
+Route::post('dinnertable/add', [CrudDinnerTableController::class, 'postDinnerTable'])->name('dinnertable.post');
