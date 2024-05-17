@@ -24,7 +24,7 @@
                             <td>{{ $notification->notifications_content }}</td>
                             <td>{{ $notification->notifications_time }}</td>
                             <td class="text-center" style="padding-top: 10px;">
-           
+                            <a href="{{ route('updatenotifications', ['notifications_id' => $notification->notifications_id]) }}" class="btn btn-primary">Sửa</a>
                             </td>
                         </tr>
                         @endforeach

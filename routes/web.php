@@ -65,3 +65,5 @@ Route::get('deletecategories', [CrudCategoriesController::class, 'deletecategori
 Route::get('listnotifications', [CrudNotificationsController::class, 'listnotifications'])->name('listnotifications');
 Route::get('addnotifications', [CrudNotificationsController::class, 'addnotifications'])->name('addnotifications');
 Route::post('addnotifications', [CrudNotificationsController::class, 'postaddnotifications'])->name('addnotifications.postaddnotifications');
+Route::get('updatenotifications', [CrudNotificationsController::class, 'updatenotifications'])->name('updatenotifications');
+Route::post('updatenotifications', [CrudNotificationsController::class, 'postupdatenotifications'])->name('updatenotifications.postupdatenotifications');
