@@ -5,6 +5,7 @@ use App\Http\Controllers\CrudBranchesController;
 use App\Http\Controllers\CrudFoodController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
+use App\Http\Controllers\CrudCategoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,3 +50,12 @@ Route::get('updatebranches', [CrudBranchesController::class, 'updatebranches'])-
 Route::post('updatebranches', [CrudBranchesController::class, 'postUpdatebranches'])->name('updatebranches.postUpdatebranches');
 
 Route::get('deletebranches', [CrudBranchesController::class, 'deletebranches'])->name('deletebranches');
+
+//categories
+Route::get('listcategories', [CrudCategoriesController::class, 'listcategories'])->name('listcategories');
+Route::get('addcategories', [CrudCategoriesController::class, 'addcategories'])->name('addcategories');
+Route::post('addcategories', [CrudCategoriesController::class, 'postaddcategories'])->name('addcategories.postaddcategories');
+Route::get('updatecategories', [CrudCategoriesController::class, 'updatecategories'])->name('updatecategories');
+Route::post('updatecategories', [CrudCategoriesController::class, 'postupdatecategories'])->name('updatecategories.postupdatecategories');
+
+Route::get('deletecategories', [CrudCategoriesController::class, 'deletecategories'])->name('deletecategories');

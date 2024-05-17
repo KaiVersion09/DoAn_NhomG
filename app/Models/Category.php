@@ -16,6 +16,8 @@ class Category extends Model
 
     public $incrementing = true;
 
+    protected $fillable = ['categories_name', 'categories_description'];
+
     public function food(): HasMany
     {
         return $this->hasMany(Food::class);

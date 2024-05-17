@@ -48,14 +48,12 @@
                             <a class="nav-link sidebar-link" href="{{ route('home') }}"><i class="fas fa-home"></i> Trang chủ</a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
+
                             <a class="nav-link" href="#"><i class="fas fa-box-open"></i> Quản lý sản phẩm</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user.list') }}"><i class="fas fa-users"></i> Quản lý người dùng</a>
-=======
-                            <a class="nav-link" href="#"><i class="fas fa-users"></i> Quản lý người dùng</a>
->>>>>>> origin/dashboard_admin
+
                         </li>
 
                         <li class="nav-item">
@@ -71,14 +69,12 @@
                             <a class="nav-link" href="{{ route('food.list') }}"><i class="fas fa-hamburger"></i> Quản lý món ăn</a>
                         </li>
                         <li class="nav-item">
-<<<<<<< HEAD
                             <a class="nav-link" href="{{ route('listbranches') }}"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
-=======
-                            <a class="nav-link" href="#"><i class="fas fa-box"></i> Quản lý danh mục</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
->>>>>>> origin/dashboard_admin
+                            
+                        <a class="nav-link" href="{{ route('listcategories') }}"><i class="fas fa-box"></i> Quản lý danh mục</a>
+
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fas fa-users"></i> Quản lý nhân viên </a>
