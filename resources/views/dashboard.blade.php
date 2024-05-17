@@ -74,8 +74,8 @@
         @endguest
 
     </nav>
-    <div class="container-full-height">
-        <main class="container">
+    <div class="full-height">
+        <main class="p-2">
         @yield('content')
         </main>
         <footer class="bg-dark text-white text-center text-lg-start p-3">
