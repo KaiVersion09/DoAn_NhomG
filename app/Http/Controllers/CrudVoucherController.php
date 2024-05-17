@@ -92,4 +92,17 @@ class CrudVoucherController extends Controller
 
         return redirect()->route('voucher.list')->withSuccess('Voucher đã được cập nhật thành công.');
     }
-}
+
+    public function deleteVoucher(Request $request)
+    {
+        $voucher_id = $request->get('voucher_id');
+        $vouchers = Voucher::find($voucher_id);
+    
+        if ($vouchers) {
+            $vouchers->delete();
+            return redirect()->route('voucher.list')->withSuccess('Voucher đã được xóa thành công.');
+        } else {
+            return redirect()->route('voucher.list')->withErrors('Voucher không tồn tại.');
+        }
+    }
+}    
