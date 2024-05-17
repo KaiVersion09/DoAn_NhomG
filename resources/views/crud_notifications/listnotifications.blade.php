@@ -6,7 +6,7 @@
         <div class="card-body">
             <h2 class="card-title text-center mb-4">Danh Sách Thông Báo</h2>
             <div class="table-responsive">
-          
+            <a href="{{ route('addnotifications') }}" class="btn btn-secondary mb-2">Add</a>
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
