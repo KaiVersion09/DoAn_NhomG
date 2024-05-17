@@ -13,7 +13,7 @@
                         <p class="card-text text-white">Giá: ${{ $food->food_price }}</p>
                         <div class="d-flex justify-content-between mt-2">
                             <a href="#" class="btn btn-primary btn-sm mr-2">Thêm vào giỏ hàng</a>
-                            <a href="#" class="btn btn-secondary btn-sm">Chi tiết</a>
+                            <a href="{{ route('foods.show', ['food_id' => $food->food_id]) }}" class="btn btn-secondary btn-sm">Chi tiết</a>
                         </div>
                     </div>
                 </div>

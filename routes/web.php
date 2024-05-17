@@ -66,3 +66,4 @@ Route::post('updatecategories', [CrudCategoriesController::class, 'postupdatecat
 Route::get('deletecategories', [CrudCategoriesController::class, 'deletecategories'])->name('deletecategories');
 //web user
 Route::get('trangchu', [WebController::class, 'showfood'])->name('food.trangchu');
+Route::get('readFood', [WebController::class, 'readFood'])->name('foods.show');
