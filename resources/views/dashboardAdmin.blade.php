@@ -62,7 +62,7 @@
                             <a class="nav-link" href="{{ route('listNews') }}"><i class="fas fa-newspaper"></i> Quản lý tin tức</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-bell"></i> Quản lý thông báo</a>
+                            <a class="nav-link" href="{{ route('listnotifications') }}"><i class="fas fa-bell"></i> Quản lý thông báo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dinnertable.list') }}"><i class="fas fa-utensils"></i> Quản lý bàn ăn</a>
@@ -77,6 +77,11 @@
                             <a class="nav-link" href="#"><i class="fas fa-box"></i> Quản lý danh mục</a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
+=======
+
+                        <a class="nav-link" href="{{ route('listcategories') }}"><i class="fas fa-box"></i> Quản lý danh mục</a>
+>>>>>>> origin/delete_notification
 
                         </li>
                         <li class="nav-item">

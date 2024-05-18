@@ -64,7 +64,7 @@
               <div class="col-sm-8 offset-sm-4 text-end">              
                 <button type="submit" class="btn btn-dark btn-block">Đăng Ký</button>
                 <div class="text-center mt-2">
-                        <a href="#">Đã có tài khoản?</a>
+                        <a href="{{ route('login') }}">Đã có tài khoản?</a>
             </div>
               </div>
             </div>
