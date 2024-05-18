@@ -37,6 +37,7 @@ Route::get('home', [CrudUserController::class, 'home'])->name('home');
 Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUser');
 Route::get('register', [CrudUserController::class, 'registerUser'])->name('user.registerUser');
 Route::post('register', [CrudUserController::class, 'postUser'])->name('user.postUser');
+<<<<<<< HEAD
 Route::get('list_user', [CrudUserController::class, 'listUser'])->name('user.list');
 
 Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
@@ -125,3 +126,6 @@ Route::get('deletevoucher', [CrudVoucherController::class, 'deleteVoucher'])->na
 Route::get('bookings/create', [BookingController::class, 'create'])->name('bookings.create');
 Route::post('bookings', [BookingController::class, 'store'])->name('bookings.store');
 
+=======
+Route::get('logout', [CrudUserController::class, 'logout'])->name('logout');;
+>>>>>>> origin/logout

@@ -105,6 +105,7 @@ class CrudUserController extends Controller
 
         return redirect("login")->withSuccess('Login details are not valid');
     }
+<<<<<<< HEAD
 
     /**
      * Delete user by id
@@ -183,4 +184,12 @@ class CrudUserController extends Controller
         return view('crud_user.read_user', ['user' => $user]);
     }
 
+=======
+    public function logout()
+    {
+        Session::flush();
+        Auth::logout();
+        return Redirect('login');
+    }
+>>>>>>> origin/logout
 }
