@@ -6,17 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('user_booking', function (Blueprint $table) {
-            $table->increments('booking_id');
-            $table->integer('user_id');
-            $table->integer('dinner_table_id');
+            $table->increments('id');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('dinner_table_id')->constrained('dinner_tables')->onDelete('cascade');
+            $table->foreignId('branch_id')->constrained('branches')->onDelete('cascade');
             $table->dateTime('booking_time');
-            $table->integer('branch_id');
             $table->integer('number_of_guests');
             $table->timestamps();
         });

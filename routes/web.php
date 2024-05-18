@@ -124,8 +124,9 @@ Route::get('deletevoucher', [CrudVoucherController::class, 'deleteVoucher'])->na
 
 
 //bokingtable
-Route::get('bookings/create', [BookingController::class, 'create'])->name('bookings.create');
+Route::get('bookings', [BookingController::class, 'create'])->name('bookings.create');
 Route::post('bookings', [BookingController::class, 'store'])->name('bookings.store');
+
 
 Route::get('logout', [CrudUserController::class, 'logout'])->name('logout');;
 

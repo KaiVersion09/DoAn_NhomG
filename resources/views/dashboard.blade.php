@@ -53,7 +53,7 @@
           <a class="nav-link" href="#">Danh mục</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Đặt bàn</a>
+          <a class="nav-link" href="{{ Route('bookings.create') }}">Đặt bàn</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Tin tức</a>
