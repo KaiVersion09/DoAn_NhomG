@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('branches', function (Blueprint $table) {
             $table->id();
             $table->string('branches_name', 255);
-            $table->integer('branches_phone');
+            $table->string('branches_phone',20);
             $table->text('branches_address', 255);
             $table->timestamps();
         });
