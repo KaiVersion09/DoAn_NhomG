@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -22,24 +23,13 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#">Cài đặt</a>
                 </li>
-
-                <li class="nav-item dropdown order-md-0 order-lg-1">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="path_to_avatar_image" alt="Avatar" class="avatar">
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Thông tin admin</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ Route('signout') }}">Đăng xuất</a>
-                    </div>
-
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Đăng xuất</a>
-
+                    <a class="nav-link text-white" href="{{ Route('signout') }}">Đăng xuất</a>
                 </li>
             </ul>
         </div>
     </nav>
+
 
     <!-- Main Content -->
     <div class="container-fluid">
@@ -75,7 +65,7 @@
                             <a class="nav-link" href="{{ route('listbranches') }}"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
 
                         </li>
-                    
+
                         </li>
                         <li class="nav-item">
 
