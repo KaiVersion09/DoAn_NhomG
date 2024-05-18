@@ -76,13 +76,7 @@
 
                             <a class="nav-link" href="#"><i class="fas fa-box"></i> Quản lý danh mục</a>
                         </li>
-                        <li class="nav-item">
-<<<<<<< HEAD
-=======
-
-                        <a class="nav-link" href="{{ route('listcategories') }}"><i class="fas fa-box"></i> Quản lý danh mục</a>
->>>>>>> origin/delete_notification
-
+                    
                         </li>
                         <li class="nav-item">
 

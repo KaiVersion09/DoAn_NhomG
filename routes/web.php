@@ -13,17 +13,10 @@ use App\Http\Controllers\CrudStaffController;
 use App\Http\Controllers\CrudDinnerTableController;
 use App\Http\Controllers\CrudNewsController;
 use App\Http\Controllers\CrudVoucherController;
-
 use App\Http\Controllers\CrudCategoriesController;
-<<<<<<< HEAD
 use App\Http\Controllers\WebController;
-
-
-
-
-=======
 use App\Http\Controllers\CrudNotificationsController;
->>>>>>> origin/delete_notification
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -88,7 +81,7 @@ Route::post('addcategories', [CrudCategoriesController::class, 'postaddcategorie
 Route::get('updatecategories', [CrudCategoriesController::class, 'updatecategories'])->name('updatecategories');
 Route::post('updatecategories', [CrudCategoriesController::class, 'postupdatecategories'])->name('updatecategories.postupdatecategories');
 Route::get('deletecategories', [CrudCategoriesController::class, 'deletecategories'])->name('deletecategories');
-<<<<<<< HEAD
+
 //web user
 Route::get('trangchu', [WebController::class, 'showfood'])->name('food.trangchu');
 
@@ -133,7 +126,6 @@ Route::post('bookings', [BookingController::class, 'store'])->name('bookings.sto
 
 Route::get('logout', [CrudUserController::class, 'logout'])->name('logout');;
 
-=======
 
 //notifications
 Route::get('listnotifications', [CrudNotificationsController::class, 'listnotifications'])->name('listnotifications');
@@ -142,4 +134,4 @@ Route::post('addnotifications', [CrudNotificationsController::class, 'postaddnot
 Route::get('updatenotifications', [CrudNotificationsController::class, 'updatenotifications'])->name('updatenotifications');
 Route::post('updatenotifications', [CrudNotificationsController::class, 'postupdatenotifications'])->name('updatenotifications.postupdatenotifications');
 Route::get('deletenotifications', [CrudNotificationsController::class, 'deletenotifications'])->name('delete.notifications');
->>>>>>> origin/delete_notification
+
