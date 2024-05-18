@@ -11,13 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('staff', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('wage')->nullable();
             $table->string('password');
             $table->string('avatar')->nullable();
+            $table->unsignedBigInteger('branch_id'); // Thêm trường branch_id
+            $table->foreign('branch_id')->references('id')->on('branches');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -28,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('staff');
     }
 };
