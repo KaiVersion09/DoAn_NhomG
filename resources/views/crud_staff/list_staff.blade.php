@@ -9,7 +9,6 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
                             <th scope="col">Avatar</th>
                             <th scope="col">Username</th>
                             <th scope="col">Email</th>
@@ -22,7 +21,6 @@
                     <tbody>
                         @foreach($staffs as $staff)
                         <tr>
-                            <td>{{ $staff->id }}</td>
                             <td>
                                 @if($staff->avatar)
                                 <img src="{{ asset($staff->avatar) }}" alt="Avatar" style="max-width: 100px; max-height: 100px;">

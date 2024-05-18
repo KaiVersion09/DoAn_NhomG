@@ -6,11 +6,10 @@
         <div class="card-body">
             <h2 class="card-title text-center mb-4">Danh Sách Chi Nhánh</h2>
             <div class="table-responsive">
-                <a href="{{ route('addbranches') }}" class="btn btn-secondary mb-2">Add</a>
+                <a href="{{ route('addbranches') }}" class="btn btn-secondary mb-2">Thêm Chi Nhánh</a>
                 <table class="table table-bordered table-striped">
                     <thead>
-                        <tr>
-                            <th scope="col">ID Chi Nhánh</th>
+                        <tr>    
                             <th scope="col">Tên Chi Nhánh</th>
                             <th scope="col">Số Điện Thoại Chi Nhánh</th>
                             <th scope="col">Địa Chỉ Chi Nhánh</th>
@@ -21,15 +20,13 @@
                     <tbody>
                         @foreach($branches as $branch)
                         <tr>
-                            <td>{{ $branch->id }}</td>
                             <td>{{ $branch->branches_name }}</td>
                             <td>{{ $branch->branches_phone }}</td>
                             <td>{{ $branch->branches_address }}</td>
                             <td class="text-center" style="padding-top: 10px;">
-                            <a href="{{ route('updatebranches', ['branches_id' => $branch->branches_id]) }}" class="btn btn-primary">Sửa</a>
-                            <a href="{{ route('deletebranches', ['branches_id' => $branch->branches_id]) }}" class="btn btn-danger">Xóa</a>            
+                                <a href="{{ route('updatebranches', ['id' => $branch->id]) }}" class="btn btn-primary">Sửa</a>
+                                <a href="{{ route('deletebranches', ['id' => $branch->id]) }}" class="btn btn-danger">Xóa</a>
                             </td>
-
                         </tr>
                         @endforeach
                     </tbody>
@@ -38,9 +35,7 @@
                     {{ $branches->links() }}
                 </div>
             </div>
-
         </div>
-
     </div>
 </div>
 @endsection

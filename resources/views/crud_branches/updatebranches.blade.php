@@ -6,9 +6,8 @@
             <div class="card">
                 <h2 class="card-header text-center">Cập Nhật Chi Nhánh</h2>
                 <div class="card-body">
-                    <form method="post" action="{{ route('updatebranches.postUpdatebranches') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('updatebranches.postUpdatebranches', ['id' => $branch->id]) }}" enctype="multipart/form-data">
                         @csrf
-                        <input name="branches_id" type="hidden" value="{{ $branch->branches_id }}">
                         <div class="mb-3 row">
                             <label for="branches_name" class="col-sm-4 col-form-label">Tên Chi Nhánh:</label>
                             <div class="col-sm-8">

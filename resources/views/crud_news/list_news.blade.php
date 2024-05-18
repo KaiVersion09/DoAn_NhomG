@@ -10,7 +10,6 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
                             <th scope="col">Title</th>
                             <th scope="col">Image</th>
                             <th scope="col">Time</th>
@@ -21,7 +20,6 @@
                     <tbody>
                         @foreach($news as $item)
                             <tr>
-                                <td>{{ $item->id }}</td>
                                 <td>{{ $item->title }}</td>
                                 <td><img src="{{ asset($item->image) }}" alt="Image" style="max-width: 100px; max-height: 100px;"></td>
                                 <td>{{ $item->updated_at }}</td>

@@ -9,7 +9,6 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
                             <th scope="col">Ảnh</th>
                             <th scope="col">Tên Bàn</th>
                             <th scope="col">Số ghế</th>
@@ -20,7 +19,6 @@
                     <tbody>
                         @foreach($tables as $table)
                         <tr>
-                            <td>{{ $table->id }}</td>
                             <td>
                                 @if($table->image)
                                 <img src="{{ asset($table->image) }}" alt="Avatar" style="max-width: 100px; max-height: 100px;">

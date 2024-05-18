@@ -21,7 +21,6 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
                             <th scope="col">Tên Món</th>
                             <th scope="col">Hình ảnh</th>
                             <th scope="col">Danh mục món</th>
@@ -34,7 +33,6 @@
                     <tbody>
                         @foreach($foods as $food)
                         <tr>
-                            <td>{{ $food->food_id }}</td>
                             <td>{{ $food->food_name }}</td>
                             <td><img src="{{ asset($food->food_avatar) }}" alt="Avatar" style="max-width: 100px; max-height: 100px;"></td>
                             <td>{{ $food->categories_id }}</td>

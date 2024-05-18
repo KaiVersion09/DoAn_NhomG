@@ -14,11 +14,11 @@ class CrudBranchesController extends Controller
 
     public function listBranches()
     {
-        $branches = Branch::paginate(4); 
+        $branches = Branch::paginate(4);
         return view('crud_branches.listbranches', ['branches' => $branches]);
     }
-    
-    
+
+
     public function addbranches()
     {
         return view('crud_branches.addbranches');
@@ -37,6 +37,7 @@ class CrudBranchesController extends Controller
         return redirect()->route('listbranches')->with('success', 'Thêm chi nhánh thành công.');
     }
 
+    // Phương thức để tìm và cập nhật chi nhánh theo ID
     public function updatebranches(Request $request)
     {
         $branch_id = $request->get('id');
@@ -48,7 +49,6 @@ class CrudBranchesController extends Controller
 
         return view('crud_branches.updatebranches', ['branch' => $branch]);
     }
-
     public function postUpdatebranches(Request $request)
     {
         $request->validate([

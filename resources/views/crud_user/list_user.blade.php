@@ -20,7 +20,6 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
                             <th scope="col">Avatar</th>
                             <th scope="col">Username</th>
                             <th scope="col">Email</th>
@@ -30,7 +29,6 @@
                     <tbody>
                         @foreach($users as $user)
                         <tr>
-                            <td>{{ $user->id }}</td>
                             <td><img src="{{ $user->avatar }}" alt="Avatar" style="max-width: 100px; max-height: 100px;"></td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>

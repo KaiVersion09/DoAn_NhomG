@@ -10,7 +10,6 @@
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">ID Thông Báo</th> 
                             <th scope="col">Nội Dung</th> 
                             <th scope="col">Thời Gian</th> 
                             <th scope="col" class="text-center">Thao Tác</th>
@@ -20,7 +19,6 @@
                     <tbody>
                         @foreach($notifications as $notification)
                         <tr>
-                            <td>{{ $notification->notifications_id }}</td>
                             <td>{{ $notification->notifications_content }}</td>
                             <td>{{ $notification->notifications_time }}</td>
                             <td class="text-center" style="padding-top: 10px;">
