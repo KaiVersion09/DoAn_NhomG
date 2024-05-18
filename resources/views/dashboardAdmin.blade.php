@@ -52,7 +52,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user.list') }}"><i class="fas fa-users"></i> Quản lý người dùng</a>
-                            <a class="nav-link" href="#"><i class="fas fa-users"></i> Quản lý người dùng</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('listNews') }}"><i class="fas fa-newspaper"></i> Quản lý tin tức</a>
