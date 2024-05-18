@@ -29,10 +29,10 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboardAdmin']);
 Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
-
 Route::get('list_news', [CrudNewsController::class, 'listNews'])->name('listNews');
 Route::get('add_news', [CrudNewsController::class, 'addNews'])->name('add_news');
 Route::post('add_news', [CrudNewsController::class, 'add_News'])->name('addNews');
 Route::post('update_news', [CrudNewsController::class, 'postUpdateNews'])->name('updateNews');
 Route::get('update_news', [CrudNewsController::class, 'updateNews'])->name('update_news');
 Route::get('delete_news', [CrudNewsController::class, 'deleteNews'])->name('delete_news');
+Route::get('/user/find', [CrudUserController::class, 'findUser'])->name('user.find');
