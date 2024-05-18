@@ -22,6 +22,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#">Cài đặt</a>
                 </li>
+<<<<<<< HEAD
                 <li class="nav-item dropdown order-md-0 order-lg-1">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="path_to_avatar_image" alt="Avatar" class="avatar">
@@ -31,11 +32,18 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{ Route('signout') }}">Đăng xuất</a>
                     </div>
+=======
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Đăng xuất</a>
+>>>>>>> datban
                 </li>
             </ul>
         </div>
     </nav>
+<<<<<<< HEAD
 
+=======
+>>>>>>> datban
 
     <!-- Main Content -->
     <div class="container-fluid">
@@ -53,6 +61,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user.list') }}"><i class="fas fa-users"></i> Quản lý người dùng</a>
                         </li>
+<<<<<<< HEAD
+=======
+                        
+>>>>>>> datban
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('listNews') }}"><i class="fas fa-newspaper"></i> Quản lý tin tức</a>
                         </li>
@@ -62,15 +74,28 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dinnertable.list') }}"><i class="fas fa-utensils"></i> Quản lý bàn ăn</a>
                         </li>
+<<<<<<< HEAD
 
+=======
+>>>>>>> datban
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('food.list') }}"><i class="fas fa-hamburger"></i> Quản lý món ăn</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('listbranches') }}"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
+<<<<<<< HEAD
                             <a class="nav-link" href="#"><i class="fas fa-box"></i> Quản lý danh mục</a>
                         </li>
                         <li class="nav-item">
+=======
+                        </li>
+                        <li class="nav-item">
+                            
+                        <a class="nav-link" href="{{ route('listcategories') }}"><i class="fas fa-box"></i> Quản lý danh mục</a>
+
+                        </li>
+                        <li class="nav-item">
+>>>>>>> datban
                             <a class="nav-link" href="{{ route('staff.list') }}"><i class="fas fa-users"></i> Quản lý nhân viên </a>
                         </li>
                         <li class="nav-item">
@@ -82,19 +107,19 @@
 
             <!-- Phần nội dung chính ở đây -->
             @yield('content')
+    </div>
+
+    <!-- Footer -->
+    <footer class="fixed-bottom text-lg-start bg-dark text-white p-2">
+        <div class="text-md-left p-2">
+            <p class="mb-0"> &copy; Copyright Nhóm G - Đồ án Back End 2</p>
+
         </div>
+    </footer>
 
-        <!-- Footer -->
-        <footer class="fixed-bottom text-lg-start bg-dark text-white p-2">
-            <div class="text-md-left p-2">
-                <p class="mb-0"> &copy; Copyright Nhóm G - Đồ án Back End 2</p>
-
-            </div>
-        </footer>
-
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
