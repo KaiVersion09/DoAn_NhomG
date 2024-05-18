@@ -44,7 +44,7 @@ Route::get('/', function () {
 });
 
 Route::get('/admin/dashboard', [AdminController::class, 'dashboardAdmin']);
-Route::get('user/delete', [CrudUserController::class,'deleteUser'])->name('user.deleteUser');
+Route::get('user/delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
 
@@ -55,6 +55,8 @@ Route::post('admin/food', [CrudFoodController::class, 'postFood'])->name('food.p
 Route::get('admin/updatefood', [CrudFoodController::class, 'updateFood'])->name('food.updateFood');
 Route::post('admin/updatefood', [CrudFoodController::class, 'postUpdateFood'])->name('food.postUpdateFood');
 Route::get('delete', [CrudFoodController::class, 'deleteFood'])->name('food.deleteFood');
+
+Route::get('food/find', [CrudFoodController::class, 'findFood'])->name('food.find');
 
 
 //voucher
@@ -134,4 +136,3 @@ Route::post('addnotifications', [CrudNotificationsController::class, 'postaddnot
 Route::get('updatenotifications', [CrudNotificationsController::class, 'updatenotifications'])->name('updatenotifications');
 Route::post('updatenotifications', [CrudNotificationsController::class, 'postupdatenotifications'])->name('updatenotifications.postupdatenotifications');
 Route::get('deletenotifications', [CrudNotificationsController::class, 'deletenotifications'])->name('delete.notifications');
-

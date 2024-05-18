@@ -21,7 +21,7 @@ class CrudStaffController extends Controller
     {
         // Validate form data
         $request->validate([
-            'name' => 'required|unique:staff',
+            'name' => 'required',
             'email' => 'required|email|unique:staff',
             'password' => 'required|min:6',
             'password_confirmation' => 'required_with:password|same:password',
@@ -108,7 +108,7 @@ class CrudStaffController extends Controller
 
         // Validate form data
         $request->validate([
-            'name' => 'required|unique:staff,name,' . $input['id'],
+            'name' => 'required',
             'email' => 'required|email|unique:staff,email,' . $input['id'],
             'phone' => 'required|regex:/^0[0-9]{9}$/|unique:staff,phone,' . $input['id'],
             'wage' => 'required|min:6',
