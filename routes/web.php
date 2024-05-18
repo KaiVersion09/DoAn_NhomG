@@ -1,8 +1,11 @@
 <?php
 
+
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CrudBranchesController;
 use App\Http\Controllers\CrudFoodController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
 
@@ -37,6 +40,7 @@ Route::get('list_user', [CrudUserController::class, 'listUser'])->name('user.lis
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/admin/dashboard', [AdminController::class, 'dashboardAdmin']);
 Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
@@ -87,3 +91,6 @@ Route::post('dinnertable/add', [CrudDinnerTableController::class, 'postDinnerTab
 Route::get('dinnertable/update', [CrudDinnerTableController::class, 'updateDinnerTable'])->name('table.update');
 Route::post('dinnertable/update', [CrudDinnerTableController::class, 'postUpdateDinnerTable'])->name('table.postUpdateTable');
 Route::get('dinnertable/delete', [CrudDinnerTableController::class, 'deletedinnerTable'])->name('table.delete');
+//bokingtable
+Route::get('bookings/create', [BookingController::class, 'create'])->name('bookings.create');
+Route::post('bookings', [BookingController::class, 'store'])->name('bookings.store');
