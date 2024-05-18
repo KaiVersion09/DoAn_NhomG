@@ -55,6 +55,7 @@ Route::post('admin/food', [CrudFoodController::class, 'postFood'])->name('food.p
 Route::get('admin/updatefood', [CrudFoodController::class, 'updateFood'])->name('food.updateFood');
 Route::post('admin/updatefood', [CrudFoodController::class, 'postUpdateFood'])->name('food.postUpdateFood');
 Route::get('delete', [CrudFoodController::class, 'deleteFood'])->name('food.deleteFood');
+Route::get('readFood', [CrudFoodController::class, 'readFood'])->name('foods.show');
 
 Route::get('food/find', [CrudFoodController::class, 'findFood'])->name('food.find');
 

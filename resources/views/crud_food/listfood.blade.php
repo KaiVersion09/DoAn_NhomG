@@ -41,12 +41,9 @@
                             <td>{{ $food->food_price }}</td>
                             <td>{{ $food->food_description }}</td>
                             <td class="text-center" style="padding-top: 10px;">
-                                <a href="{{ route('food.updateFood', ['food_id' => $food->food_id]) }}" class="btn btn-primary">Sửa</a>
-                                <form action="{{ route('food.deleteFood', ['food_id' => $food->food_id]) }}" method="POST" style="display: inline;">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger ml-2">Xóa</button>
-                                </form>
+                                <a href="{{ route('food.updateFood', ['food_id' => $food->food_id]) }}" class="btn btn-primary">Edit</a>
+                                <a href="{{ route('food.deleteFood', ['food_id' => $food->food_id]) }}" class="btn btn-danger ml-2">Delete</a>
+                                <a href="{{ route('foods.show', ['food_id' => $food->food_id]) }}" class="btn btn-primary  ml-2">View</a>
                             </td>
                         </tr>
                         @endforeach
