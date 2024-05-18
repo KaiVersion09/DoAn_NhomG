@@ -139,5 +139,11 @@ public function deleteFood(Request $request)
     return redirect("list_food")->withSuccess('You have signed-in');
 }
 
+public function readFood(Request $request)
+{
+    $food_id = $request->get('food_id');
+    $foods = Food::find($food_id);
+    return view('crud_food.readfood', ['foods' => $foods]);
+} 
 
 }
