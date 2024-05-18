@@ -21,10 +21,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Cài đặt</a>
+                    <a class="nav-link text-white" href="#">Cài Đặt</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ Route('signout') }}">Đăng xuất</a>
+                    <a class="nav-link text-white" href="{{ Route('signout') }}">Đăng Xuất</a>
                 </li>
             </ul>
         </div>
