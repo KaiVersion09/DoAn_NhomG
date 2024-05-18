@@ -29,7 +29,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Thông tin admin</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Đăng xuất</a>
+                        <a class="dropdown-item" href="{{ Route('signout') }}">Đăng xuất</a>
                     </div>
                 </li>
             </ul>
@@ -70,10 +70,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('listbranches') }}"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
                             <a class="nav-link" href="#"><i class="fas fa-box"></i> Quản lý danh mục</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fas fa-store"></i> Quản lý chi nhánh</a>
-
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('staff.list') }}"><i class="fas fa-users"></i> Quản lý nhân viên </a>

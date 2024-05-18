@@ -25,7 +25,7 @@ Route::post('login', [CrudUserController::class, 'authUser'])->name('user.authUs
 Route::get('register', [CrudUserController::class, 'registerUser'])->name('user.registerUser');
 Route::post('register', [CrudUserController::class, 'postUser'])->name('user.postUser');
 Route::get('list_user', [CrudUserController::class, 'listUser'])->name('user.list');
-
+Route::get('signout', [CrudUserController::class, 'signOut'])->name('signout');
 Route::get('/', function () {
     return view('welcome');
 });

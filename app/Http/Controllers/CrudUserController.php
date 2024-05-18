@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Favorities;
 use App\Models\Posts;
 use Illuminate\Support\Facades\Hash;
@@ -9,8 +10,16 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+
 class CrudUserController extends Controller
 {
+    public function signOut()
+    {
+
+        Session::flush();
+        Auth::logout();
+        return Redirect('login');
+    }
     //Hien thi trang dang nhap
     public function login()
     {
@@ -29,11 +38,11 @@ class CrudUserController extends Controller
 
         return redirect("login")->withSuccess('You are not allowed to access');
     }
-    
+
     //register 
     public function registerUser()
-    { 
-            return view('crud_user.register');
+    {
+        return view('crud_user.register');
     }
     public function postUser(Request $request)
     {
@@ -97,7 +106,7 @@ class CrudUserController extends Controller
         return redirect("login")->withSuccess('Login details are not valid');
     }
 
-        /**
+    /**
      * Delete user by id
      */
     public function deleteUser(Request $request)
@@ -108,7 +117,7 @@ class CrudUserController extends Controller
         return redirect("list_user")->withSuccess('You have signed-in');
     }
 
-     /**
+    /**
      * Form update user page
      */
     public function updateUser(Request $request)
@@ -124,9 +133,9 @@ class CrudUserController extends Controller
      */
     public function postUpdateUser(Request $request)
     {
-         $input = $request->all();
+        $input = $request->all();
 
-         $request->validate([
+        $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $input['id'],
             'password' => 'nullable|min:6', // Bạn có thể cho phép mật khẩu là null nếu không muốn bắt buộc cập nhật
@@ -139,26 +148,26 @@ class CrudUserController extends Controller
             'avatar.mimes' => 'Ảnh tải lên phải có định dạng jpeg, png, jpg hoặc gif.',
             'avatar.max' => 'Kích thước của ảnh không được vượt quá 2MB.',
         ]);
-    //cap nhap thong tin nguoi dung dua tren csdl
-    $user = User::find($input['id']);
-    $user->name = $input['name'];
-    $user->email = $input['email'];
+        //cap nhap thong tin nguoi dung dua tren csdl
+        $user = User::find($input['id']);
+        $user->name = $input['name'];
+        $user->email = $input['email'];
 
-    if (!empty($input['password'])) {
-        $user->password = Hash::make($input['password']);
-    }
+        if (!empty($input['password'])) {
+            $user->password = Hash::make($input['password']);
+        }
 
-    // Xử lý cập nhật avatar nếu có
-    if ($request->hasFile('avatar')) {
-        $avatar = $request->file('avatar');
-        $avatarName = time().'.'.$avatar->getClientOriginalExtension();
-        $avatar->move(public_path('avatars'), $avatarName);
-        $avatarPath = 'avatars/'.$avatarName;
-        $user->avatar = $avatarPath; // Cập nhật đường dẫn avatar mới
-    }
+        // Xử lý cập nhật avatar nếu có
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
+            $avatar->move(public_path('avatars'), $avatarName);
+            $avatarPath = 'avatars/' . $avatarName;
+            $user->avatar = $avatarPath; // Cập nhật đường dẫn avatar mới
+        }
 
-    $user->save();
+        $user->save();
 
-    return redirect("list_user")->withSuccess('You have signed-in');
+        return redirect("list_user")->withSuccess('You have signed-in');
     }
 }
