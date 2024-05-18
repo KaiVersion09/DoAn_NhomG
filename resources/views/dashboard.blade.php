@@ -32,7 +32,7 @@
 </head>
 
 <body>
-<<<<<<< HEAD
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
         <a class="navbar-brand" href="#">Đờ gút food</a>
         <form class="form-inline ml-auto">
@@ -61,7 +61,7 @@
                     <a class="nav-link" href="#">Tin tức</a>
                 </li>
             </ul>
-=======
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
     <a class="navbar-brand" href="#">Đờ gút food</a>
     <form class="form-inline ml-auto">
@@ -118,7 +118,7 @@
             <a href="#" class="text-white mr-3"><span class="fab fa-facebook-f"></span></a>
             <a href="#" class="text-white mr-3"><span class="fab fa-tiktok"></span></a>
             <a href="#" class="text-white"><span class="fab fa-instagram"></span></a>
->>>>>>> origin/logout
+
         </div>
         @guest
         <div class="navbar-nav ml-auto">
