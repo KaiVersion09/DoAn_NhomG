@@ -18,9 +18,6 @@ class CrudVoucherController extends Controller
         $vouchers = Voucher::paginate(4);
         return view('crud_voucher.listvoucher', ['vouchers' => $vouchers]);
     }
-<<<<<<< HEAD
-}
-=======
 
     public function voucher()
     {
@@ -109,4 +106,3 @@ class CrudVoucherController extends Controller
         }
     }
 }    
->>>>>>> delete_voucher
