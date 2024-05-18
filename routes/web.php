@@ -5,7 +5,6 @@ use App\Http\Controllers\CrudBranchesController;
 use App\Http\Controllers\CrudFoodController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
-<<<<<<< HEAD
 
 use App\Http\Controllers\CrudStaffController;
 use App\Http\Controllers\CrudDinnerTableController;
@@ -13,10 +12,6 @@ use App\Http\Controllers\CrudNewsController;
 use App\Http\Controllers\CrudVoucherController;
 
 
-=======
-use App\Http\Controllers\CrudVoucherController;
-
->>>>>>> delete_voucher
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,7 +45,7 @@ Route::post('admin/food', [CrudFoodController::class, 'postFood'])->name('food.p
 Route::get('admin/updatefood', [CrudFoodController::class, 'updateFood'])->name('food.updateFood');
 Route::post('admin/updatefood', [CrudFoodController::class, 'postUpdateFood'])->name('food.postUpdateFood');
 Route::get('delete', [CrudFoodController::class, 'deleteFood'])->name('food.deleteFood');
-<<<<<<< HEAD
+
 //branches
 Route::get('addbranches', [CrudBranchesController::class, 'addbranches'])->name('addbranches');
 Route::post('addbranches', [CrudBranchesController::class, 'postaddBranch'])->name('addbranches.postaddBranch');
@@ -83,17 +78,13 @@ Route::get('delete_news', [CrudNewsController::class, 'deleteNews'])->name('dele
 Route::get('/user/find', [CrudUserController::class, 'findUser'])->name('user.find');
 Route::get('list_voucher', [CrudVoucherController::class, 'listVoucher'])->name('voucher.list');
 
-=======
+
 
 Route::get('admin/voucher', [CrudVoucherController::class, 'voucher'])->name('voucher');
 Route::post('admin/voucher', [CrudVoucherController::class, 'postVoucher'])->name('voucher.postVoucher');
 Route::get('list_voucher', [CrudVoucherController::class, 'listVoucher'])->name('voucher.list');
-
 Route::get('admin/updatevoucher/{id}', [CrudVoucherController::class, 'editVoucher'])->name('voucher.edit');
 Route::post('admin/updatevoucher', [CrudVoucherController::class, 'postUpdateVoucher'])->name('voucher.postUpdateVoucher');
-
 Route::get('deletevoucher', [CrudVoucherController::class, 'deleteVoucher'])->name('voucher.deleteVoucher');
 
 
-
->>>>>>> delete_voucher
