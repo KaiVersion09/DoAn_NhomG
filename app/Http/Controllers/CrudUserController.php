@@ -161,4 +161,18 @@ class CrudUserController extends Controller
 
     return redirect("list_user")->withSuccess('You have signed-in');
     }
+
+    
+    public function findUser(Request $request)
+    {
+        $user_name = $request->get('name');
+        $user = User::where('name', $user_name)->first();
+    
+        if (!$user) {
+            return redirect()->route('user.list')->with('error', 'Người dùng không tồn tại');
+        }
+    
+        return view('crud_user.read_user', ['user' => $user]);
+    }
+    
 }

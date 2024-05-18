@@ -28,3 +28,4 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboardAdmin']);
 Route::get('delete', [CrudUserController::class, 'deleteUser'])->name('user.deleteUser');
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
+Route::get('/user/find', [CrudUserController::class, 'findUser'])->name('user.find');
