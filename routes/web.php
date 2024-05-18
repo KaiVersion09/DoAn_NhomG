@@ -5,14 +5,13 @@ use App\Http\Controllers\CrudBranchesController;
 use App\Http\Controllers\CrudFoodController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CrudUserController;
-<<<<<<< HEAD
+
 use App\Http\Controllers\CrudStaffController;
 use App\Http\Controllers\CrudDinnerTableController;
 use App\Http\Controllers\CrudNewsController;
-=======
 use App\Http\Controllers\CrudVoucherController;
 
->>>>>>> list_voucher
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,8 +46,6 @@ Route::get('admin/updatefood', [CrudFoodController::class, 'updateFood'])->name(
 Route::post('admin/updatefood', [CrudFoodController::class, 'postUpdateFood'])->name('food.postUpdateFood');
 
 Route::get('delete', [CrudFoodController::class, 'deleteFood'])->name('food.deleteFood');
-
-<<<<<<< HEAD
 //branches
 Route::get('addbranches', [CrudBranchesController::class, 'addbranches'])->name('addbranches');
 Route::post('addbranches', [CrudBranchesController::class, 'postaddBranch'])->name('addbranches.postaddBranch');
@@ -79,6 +76,5 @@ Route::post('update_news', [CrudNewsController::class, 'postUpdateNews'])->name(
 Route::get('update_news', [CrudNewsController::class, 'updateNews'])->name('update_news');
 Route::get('delete_news', [CrudNewsController::class, 'deleteNews'])->name('delete_news');
 Route::get('/user/find', [CrudUserController::class, 'findUser'])->name('user.find');
-=======
 Route::get('list_voucher', [CrudVoucherController::class, 'listVoucher'])->name('voucher.list');
->>>>>>> list_voucher
+
