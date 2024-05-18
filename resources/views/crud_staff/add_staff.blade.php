@@ -69,6 +69,19 @@
           </div>
         </div>
         <div class="mb-2 row">
+          <label for="branch_id" class="col-sm-4 col-form-label">Chi nhánh:</label>
+          <div class="col-sm-8">
+            <select class="form-control" name="branch_id" id="branch_id">
+              @foreach($branches as $branch)
+              <option value="{{ $branch->id }}">{{ $branch->branches_name }}</option>
+              @endforeach
+            </select>
+            @if ($errors->has('branch_id'))
+            <span class="text-danger">{{ $errors->first('branch_id') }}</span>
+            @endif
+          </div>
+        </div>
+        <div class="mb-2 row">
           <div class="col-sm-8 offset-sm-4 text-end">
             <button type="submit" class="btn btn-dark btn-block">Thêm</button>
           </div>

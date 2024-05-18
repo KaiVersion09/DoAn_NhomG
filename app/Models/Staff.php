@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Staff extends Model
@@ -14,7 +13,7 @@ class Staff extends Model
         'phone',
         'wage',
         'avatar',
-        // Thêm các trường khác nếu cần
+        'branch_id', // Thêm cột branch_id vào fillable để có thể gán giá trị cho nó
     ];
 
     protected $hidden = [
@@ -22,4 +21,9 @@ class Staff extends Model
         'remember_token', // Giấu trường remember token
     ];
 
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class, 'branch_id', 'id');
+    }
 }
+

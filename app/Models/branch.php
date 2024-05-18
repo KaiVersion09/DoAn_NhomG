@@ -17,4 +17,8 @@ class Branch extends Model
     {
         return $this->hasMany(DinnerTable::class, 'branch_id', 'id'); // Mối quan hệ một-nhiều
     }
+    public function staff()
+    {
+        return $this->hasMany(Staff::class, 'branch_id', 'id');
+    }
 }

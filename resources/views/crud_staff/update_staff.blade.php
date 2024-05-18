@@ -60,13 +60,27 @@
             @endif
           </div>
         </div>
+        <div class="mb-3 row">
+          <label for="branch_id" class="col-sm-4 col-form-label">Chi Nhánh:</label>
+          <div class="col-sm-8">
+            <select class="form-select" name="branch_id" id="branch_id">
+              <option value="">Chọn Chi Nhánh</option>
+              @foreach($branches as $branch)
+              <option value="{{ $branch->id }}" {{ $branch->id == $staff->branch_id ? 'selected' : '' }}>{{ $branch->branches_name }}</option>
+              @endforeach
+            </select>
+            @error('branch_id')
+            <span class="text-danger">{{ $message }}</span>
+            @enderror
+          </div>
+        </div>
         <div class="mb-2 row">
           <label for="avatar" class="col-sm-4 col-form-label">Chọn ảnh:</label>
           <div class="col-sm-8">
             @if($staff->avatar)
-              <img src="{{ asset($staff->avatar) }}" alt="Avatar hiện tại" style="max-width: 100px; max-height: 100px;" class="mb-2">
+            <img src="{{ asset($staff->avatar) }}" alt="Avatar hiện tại" style="max-width: 100px; max-height: 100px;" class="mb-2">
             @else
-              <img src="{{ asset('default-avatar.png') }}" alt="Avatar mặc định" style="max-width: 100px; max-height: 100px;" class="mb-2">
+            <img src="{{ asset('default-avatar.png') }}" alt="Avatar mặc định" style="max-width: 100px; max-height: 100px;" class="mb-2">
             @endif
             <input type="file" class="form-control-file" name="avatar" id="avatar">
             @if ($errors->has('avatar'))

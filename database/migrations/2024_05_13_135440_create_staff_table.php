@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string('wage')->nullable();
             $table->string('password');
             $table->string('avatar')->nullable();
+            $table->unsignedBigInteger('branch_id'); // Thêm trường branch_id
+            $table->foreign('branch_id')->references('id')->on('branches');
             $table->rememberToken();
             $table->timestamps();
         });

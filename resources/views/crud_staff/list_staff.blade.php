@@ -3,7 +3,7 @@
 <div class="container mt-5">
     <div class="card">
         <div class="card-body">
-            <a href="{{ Route('staff.add') }}" class="btn btn-success">Add</a>
+            <a href="{{ route('staff.add') }}" class="btn btn-success">Add</a>
             <h2 class="card-title text-center mb-4">Danh Sách Nhân Viên</h2>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
@@ -15,11 +15,10 @@
                             <th scope="col">Email</th>
                             <th scope="col">Phone</th>
                             <th scope="col">Wage</th>
+                            <th scope="col">Branch</th> <!-- Add Branch column -->
                             <th scope="col" class="text-center">Thao Tác</th>
                         </tr>
                     </thead>
-
-
                     <tbody>
                         @foreach($staffs as $staff)
                         <tr>
@@ -35,6 +34,7 @@
                             <td>{{ $staff->email }}</td>
                             <td>{{ $staff->phone }}</td>
                             <td>{{ $staff->wage }}</td>
+                            <td>{{ $staff->branch->branches_name }}</td> <!-- Display Branch name -->
                             <td class="text-center" style="padding-top: 10px;">
                                 <a href="{{ route('staff.updateStaff', ['id' => $staff->id]) }}" class="btn btn-primary">Edit</a>
                                 <a href="{{ route('staff.delete', ['id' => $staff->id]) }}" class="btn btn-danger ml-2">Delete</a>
@@ -42,7 +42,6 @@
                         </tr>
                         @endforeach
                     </tbody>
-
                 </table>
                 <div class="d-flex justify-content-center mt-4">
                     {{ $staffs->links() }}
